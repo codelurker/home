@@ -9,7 +9,7 @@ ReadTags		= yes
 # Directory in which you store music files, if you specify it, you will be able
 # to quickly go to this directory with the '-m' parameter or the 'm' command.
 # This can also point to a playlist.
-MusicDir		= "/mnt/b/Music"
+MusicDir		= "/home/mredd/playlists/"
 
 # How to sort? FileName is the only option for now.
 Sort			= FileName
@@ -107,6 +107,7 @@ ShowTime		= IfAvailable
 # Theme file. This can be absolute path or relative to
 # /usr/share/moc/themes/ (depends on installation prefix) or ~/.moc/themes/
  Theme			= crustal_balls
+#  Theme         = transparent-background
 
 # The theme used when running on on xterm
  XTermTheme		= test
@@ -239,9 +240,11 @@ PlaylistNumbering	= yes
 # Layout1 = "directory:0,0,100%,FILL"
 #
 # Default configuration:
- Layout1 = "playlist:50%,0,50%,100%"
- Layout2 = "playlist:12,0,60,70% directory:0,50%,100%,FILL"
- Layout3 = "playlist:50%,50%,50%,50%"
+# Layout1 = "playlist:50%,0,50%,100%"
+ Layout1 = "playlist:50%,50%,50%,50%"
+# Layout2 = "playlist:40,0,100,50% directory:0,50%,100%,FILL"
+ Layout2 = "directory:0,0,100%,100%"
+# Layout3 = "playlist:0,0,100%,FILL"
 
 # When the song changes, should the menu be scrolled so that the currently
 # played file is visible?
