@@ -29,9 +29,6 @@ subpos="90" #By default subtitles are too low
 subalign="2"
 #turns off xscreen saver...sometimes
 stop-xscreensaver="yes"
-#Some extra stuff you may want to try. Remove "#'s" to activate
-#Fix A/V sync problems on files with bad MP3 VBR audio
-mc="1"
-autosync="10"
-delay="0.5"
+#Screenshot
+vf-add=screenshot
 
