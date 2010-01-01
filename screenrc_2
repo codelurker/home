@@ -7,7 +7,7 @@
 term screen-256color
 #terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 #name the session
-sessionname edit
+sessionname two
 
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
@@ -82,10 +82,11 @@ bind '}' history
 #
 
 # shelltitle '$ | '
-screen -t shell 0
-screen -t vim 1 
-screen -t mc 2 mc ~/ ~/mnt
-screen -t www 3 elinks https://ssl.scroogle.org
+screen -t shell 0 
+screen -t mc 1 mc ~/ ~/mnt
+screen -t www 2 elinks https://ssl.scroogle.org
+screen -t edit1 
+screen -t edit2 
 #
 #
 #
@@ -94,7 +95,7 @@ screen -t www 3 elinks https://ssl.scroogle.org
 bind f eval "caption splitonly" "hardstatus ignore"
 bind F eval "caption always"    "hardstatus alwayslastline"
 # Status
-hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{c}%n%{.r}`%{b}%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|' 
+hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{c}%n%{.r}`%{b}%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{g}|%H|' 
 # bind = resize =
 # bind + resize +1
 # bind - resize -1

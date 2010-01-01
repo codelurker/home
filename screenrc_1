@@ -7,7 +7,7 @@
 term screen-256color
 #terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 #name the session
-sessionname com
+sessionname one
 
 # This is how one can set a reattach password:
 #password     # "1234"
@@ -83,13 +83,11 @@ bind '}' history
 
 # shelltitle '$ | '
 screen -t shell 0  
-screen -t irc 1
-screen -t cim 2
-screen -t moc 3
-screen -t ssh 4
-screen -t ftp 5
-screen -t telnet 6
-screen -t git 7
+screen -t irc 1 weechat-curses
+screen -t cim 2 centerim
+screen -t t 3 $HOME/apps/bin/bashtc
+screen -t w 4 sh $HOME/scripts/system/w.sh
+screen -t tv 5 mc $HOME/mnt/valdis/
 #
 #
 #
@@ -101,7 +99,7 @@ bind F eval "caption always"    "hardstatus alwayslastline"
 backtick 1 30 30 cat $HOME/.get_mail
 # Status
 caption always '%{= .w} %{b}Load: %l %= %{.w}| %= %{b}%1`'
-hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{c}%n%{.r}`%{b}%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{b}|%H|'  
+hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{c}%n%{.r}`%{b}%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{g}|%H|'  
 # bind = resize =
 # bind + resize +1
 # bind - resize -1
