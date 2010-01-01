@@ -157,7 +157,7 @@ function go {
 #eval screen "exec screenwm init"
 
 #
-#PROMPT_COMMAND=bash_prompt_command
+PROMPT_COMMAND=bash_prompt_command
 #bash_prompt
 #unset bash_prompt
 
