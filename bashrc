@@ -114,7 +114,7 @@ if [ "$TERM" = "Linux" ]; then
 fi
 
 if [ "$COLORTERM" == "rxvt" ]; then
-    export TERM=xterm-256color
+    export TERM=rxvt-256color
 fi
 
 #
@@ -143,18 +143,6 @@ bash_prompt_command() {
     fi
 }
 
-bash_prompt() {
-    case $TERM in
-     xterm*|rxvt*)
-         local TITLEBAR='\[\033]0;\u:${NEW_PWD}\007\]'
-          ;;
-     *)
-         local TITLEBAR=""
-          ;;
-    esac
-    
-}
-
 # Bash shell driver for 'go' (http://code.google.com/p/go-tool/).
 function go {
     export GO_SHELL_SCRIPT=$HOME/.__tmp_go.sh
@@ -169,9 +157,9 @@ function go {
 #eval screen "exec screenwm init"
 
 #
-PROMPT_COMMAND=bash_prompt_command
-bash_prompt
-unset bash_prompt
+#PROMPT_COMMAND=bash_prompt_command
+#bash_prompt
+#unset bash_prompt
 
 #bash completion
 complete -cf sudo
