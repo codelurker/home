@@ -16,19 +16,15 @@ noticebar=/rbar/!notice
 
 # Colors tuples: "<text> <background> <border>"
 WMII_NORMCOLORS='#686868 #0a0a0a #2a2929'
-#WMII_NORMCOLORS='#925e5a #1e1512 #8cb9a2'
-WMII_FOCUSCOLORS='#006e85 #191717 #383737'
-#WMII_FOCUSCOLORS='#b7bec4 #1e1512 #925e5a'
+WMII_FOCUSCOLORS='#767474 #0b0b0b #383737'
 
-WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/EM_Wall1.png'
+WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/wallpapernew2.png'
 WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
-#WMII_FONT='-misc-pragmata-*-*-*-*-12-*-*-*-*-*-*'
-#WMII_FONT='-*-iconsolata-*-*-*-*-6-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
-WMII_TERM="urxvt -name 'shell'"
-WMII_UCOM="urxvt -name screen"
-WMII_UEDIT="urxvt -name edit"
+WMII_TERM="urxvt -title 'shell'"
+WMII_UCOM="urxvt -title screen"
+WMII_UEDIT="urxvt -title edit"
 WMII_FBROWSER="thunderbird3"
 WMII_WBROWSER="conkeror"
 WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
@@ -39,17 +35,19 @@ histnum=5000
 
 # Column Rules
 wmiir write /colrules <<!
-/gimp/ -> 17+83+41
+/gimp/ -> 15+68+31
 /.*/ -> 62+38 # Golden Ratio
 !
 
 # Tagging Rules
 wmiir write /tagrules <<!
-/Gimp/ -> ~+art
 /VLC|MPlayer/ -> ~
-/KDX.*/ -> ~+kdx
-/screen/ -> +haon
-/Firefox/ -> +do
+/KDX.*/ -> ~
+/screen|conkeror|uzbl-*|tabbed|vimprobable2/ -> +haon
+/gedit|leafpad/ -> +edit
+/ssh|web/ -> +web
+/Gimp/ -> ~+art
+/armagetronad/ +game
 !
 
 # Status Bar Info
