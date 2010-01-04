@@ -55,19 +55,23 @@ branch=${BASH_REMATCH[1]}
  #local NONE="\[\033[0m\]"    # unsets color to term's fg color
     
 # regular colors
- K="\[\033[0;30m\]"    # black
- R="\[\033[0;31m\]"    # red
- G="\[\033[0;32m\]"    # green
- Y="\[\033[0;33m\]"    # yellow
- B="\[\033[0;34m\]"    # blue
- M="\[\033[0;35m\]"    # magenta
- C="\[\033[0;36m\]"    # cyan
- W="\[\033[0;37m\]"    # white
- O="\[\e[0;33m\]"    # orange
- P="\[\e[0;35m\]"    # purple
- LG="\[\e[0;37m\]"   # lightgray
- DG="\[\e[0;90m\]"   # darkgray
-    
+K="\[\033[0;30m\]"    # black
+R="\[\033[0;31m\]"    # red
+G="\[\033[0;32m\]"    # green
+Y="\[\033[0;33m\]"    # yellow
+B="\[\033[0;34m\]"    # blue
+M="\[\033[0;35m\]"    # magenta
+C="\[\033[0;36m\]"    # cyan
+W="\[\033[0;37m\]"    # white
+O="\[\e[0;33m\]"    # orange
+P="\[\e[0;35m\]"    # purple
+LG="\[\e[0;37m\]"   # lightgray
+DG="\[\e[0;90m\]"   # darkgray
+GL="\[\e[0;92m\]"   # lightgreen
+LR="\[\e[0;91m\]"   # lightred
+LP="\[\e[0;95m\]"   # lightpurple
+TQ="\[\e[0;96m\]"   # tourquoise
+
 # emphasized (bolded) colors
 EMK="\[\033[1;30m\]"  # black
 EMR="\[\033[1;31m\]"  # red
@@ -206,7 +210,7 @@ echo ""
 fortune
 echo "";
 
-PS1="${LG}[${LG}\u${R}@${G}\h${LG}]──[${EMG}\$(tty | sed -e 's:/dev/::'):${O}\$(ls -1 | wc -l | sed 's: ::g') ${B}files${LG}:${R}\$(ls -lah | grep -m 1 total | sed 's/total //')b${LG}] \n ┌─[${EMM}\${NEW_PWD}${LG}] \n ${LG}└─${R}:${G}(${LG} "
+PS1="${DG}[${LG}\u${R}@${TQ}\h${DG}]${W}──${DG}[${DG}\$(tty | sed -e 's:/dev/::'):${GL}\$(ls -1 | wc -l | sed 's: ::g') ${DG}files${LG}:${GL}\$(ls -lah | grep -m 1 total | sed 's/total //')b${DG}] \n ${W}┌─${DG}[${LP}\${NEW_PWD}${DG}] \n ${LG}└─${R}:${DG}(${LG} "
 
 #EOF
 ##################

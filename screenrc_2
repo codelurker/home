@@ -85,8 +85,10 @@ bind '}' history
 screen -t shell 0 
 screen -t mc 1 mc ~/ ~/mnt
 screen -t www 2 elinks https://ssl.scroogle.org
-screen -t edit1 
-screen -t edit2 
+screen -t edit1 3 
+screen -t edit2 4
+screen -t ftp 5
+screen -t ssh 6
 #
 #
 #
@@ -95,7 +97,7 @@ screen -t edit2
 bind f eval "caption splitonly" "hardstatus ignore"
 bind F eval "caption always"    "hardstatus alwayslastline"
 # Status
-hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{c}%n%{.r}`%{b}%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{g}|%H|' 
+hardstatus alwayslastline '%{= .k} %{.r}%n%{= 3} %= %{= .k}%-w%{.k}%n%{.r}`%{.w}%t%{-b r}%{.k}%+w %= %{.w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y |%{.k}%H|' 
 # bind = resize =
 # bind + resize +1
 # bind - resize -1

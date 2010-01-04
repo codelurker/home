@@ -87,7 +87,7 @@ screen -t irc 1 weechat-curses
 screen -t cim 2 centerim
 screen -t t 3 $HOME/apps/bin/bashtc
 screen -t w 4 sh $HOME/scripts/system/w.sh
-screen -t tv 5 mc $HOME/mnt/valdis/
+screen -t tv 5 
 #
 #
 #
@@ -98,8 +98,8 @@ bind F eval "caption always"    "hardstatus alwayslastline"
 # Backticks
 backtick 1 30 30 cat $HOME/.get_mail
 # Status
-caption always '%{= .w} %{b}Load: %l %= %{.w}| %= %{b}%1`'
-hardstatus alwayslastline '%{= .w} %{b}%n%{= 3} %= %{= w}%-w%{c}%n%{.r}`%{b}%t%{-b r}%{w}%+w %= %{w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y %{g}|%H|'  
+caption always '%{= .w} %{.k}Load: %l %= %{.w}| %= %{.k}%1`'
+hardstatus alwayslastline '%{= .k} %{.r}%n%{= 3} %= %{= .k}%-w%{.k}%n%{.r}`%{.w}%t%{-b r}%{.k}%+w %= %{.w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y |%{.k}%H|'  
 # bind = resize =
 # bind + resize +1
 # bind - resize -1
