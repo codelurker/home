@@ -1,0 +1,39 @@
+# mono-herb .. moc theme
+# by: M.reDD - mredd -at- 0tue0.com
+# http://m-redd.com
+# 
+# Date: Sun Jan  3 12:21:19 PST 2010
+
+
+background		        = black     default	  normal
+frame			        = white     default   normal
+window_title		    = green	    default	  bold
+directory		        = black	    default   bold
+selected_directory	    = green	    default	  normal
+playlist		        = white	    default	  normal
+selected_playlist	    = grey	    default	  bold
+file			        = black	    default   normal
+selected_file		    = grey	    default	  bold
+marked_file		        = black	    default	  bold
+marked_selected_file	= red	    default	  bold
+info			        = green	    default	  normal
+status			        = white	    default	  bold
+title			        = grey	    default	  bold
+state			        = red	    default	  bold,blink
+current_time		    = white	    default	  bold
+time_left		        = grey	    default	  normal
+total_time		        = black	    default	  bold
+time_total_frames	    = white	    default	  normal
+sound_parameters	    = green	    default	  bold
+legend			        = magenta   default   normal
+disabled		        = black	    default	  bold
+enabled			        = grey	    default	  bold
+empty_mixer_bar		    = white	    default	  bold
+filled_mixer_bar	    = black	    default	  bold
+empty_time_bar		    = red	    default	  bold
+filled_time_bar		    = white	    default	  normal
+entry			        = grey      default	  bold
+entry_title		        = white     default	  bold
+error			        = red	    default	  bold
+message			        = black     default	  bold
+plist_time		        = grey		default	  bold
