@@ -38,7 +38,7 @@ alias mountedinfo="df -hT"
 alias ping="ping -c 10 "
 alias ns="netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2"
 alias da="date "+%Y-%m-%d %A    %T %Z""
-alias ebrc="vim ~/.bashrc"
+alias ebrc='vim ~/.bashrc && source ~/.bashrc'
 alias c="cal"
 alias up="uptime"
 alias exi="clear;exit"
@@ -66,10 +66,6 @@ alias uzblweb="$HOME/.config/uzbl/scripts/uzbl-tabbed & "
 #vimprobable2
 alias vimprob2="sh ~/scripts/net/strttabbedvimprobable2.sh"
 
-## Adobe Air Apps
-#alias destroytwitter="adobe-air /opt/DestroyTwitter172B/DestroyTwitter172B.air &"
-#alias seesmic="adobe-air /opt/seesmic-desktop/SeesmicDesktop-0.5.air &"
-
 # Pacman
 # sudo pacman -Syu by typing pacup (sudo must be installed and configured first)
 alias pacup="sudo pacman -Syu"
@@ -89,6 +85,7 @@ pacsearch() {
      -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' ) \
      \033[0m"
 }
+
 # Yaourt aliases
 alias yaoS="yaourt -S"
 alias yaoSy="yaourt -Sy"
@@ -102,6 +99,34 @@ yaosearch() {
      -e 's#^community/.*#\\033[1;35m&\\033[0;37m#g' \
      -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' ) \
      \033[0m"
+}
+
+# Git Aliases
+alias gitb="git branch -a -v"
+alias gitba="git branch -a"
+alias gitbl="git branch -l"
+alias gitbr="git branch -r"
+alias gits="git status"
+alias gitd="git diff"
+alias gitca="git commit -a"
+alias gitpo="git push origin "
+alias gitpom="git push origin master"
+alias gitco="git checkout "
+alias gitcm="git checkout master"
+alias gitclo="git clone "
+alias gitp="git pull "
+alias gitx="gitx"
+alias gitmm="git merge master"
+alias gitcb="git-create-branch"
+
+# gc      => git checkout master
+# gc bugs => git checkout bugs
+function gc {
+  if [ -z "$1" ]; then
+      git checkout master
+  else
+      git checkout $1
+  fi
 }
 
 # Screen Aliases
