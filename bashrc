@@ -198,7 +198,7 @@ shopt -s checkwinsize
 #
 export EDITOR="vim"
 export BROWSER="elinks"
-export PAGER="$HOME/apps/bin/vimpager"
+#export PAGER="$HOME/apps/bin/vimpager"
 
 # WELCOME SCREEN
 ####################

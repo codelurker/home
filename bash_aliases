@@ -48,7 +48,7 @@ alias miPod="pmount -w /dev/sdg2 iPod"
 alias uiPod="pumount iPod"
 alias catinfo="cat *.info"
 alias mvnzb="~/scripts/misc/mvnzb.sh"
-alias mplayeralsa="mplayer -ao alsa -vf pp=lb "
+alias mplayeralsa="mplayer -ao alsa "
 alias comterm="urxvt -name 'com' &"
 alias editterm="urxvt -name 'edit' &"
 alias devterm="urxvt -name 'dev' &"
@@ -59,8 +59,12 @@ alias sitedump="~/scripts/net/site-grab.sh "
 alias teamspeak="wine $HOME/.wine/drive_c/Program\ Files/Teamspeak2_RC2/TeamSpeak.exe"
 alias munrar="$HOME/scripts/archive/unrar.sh"
 alias mountiso="mount -t iso9660 -o loop=/dev/loop0"
+alias tunetv="sh $HOME/scripts/tv/tune-ivtv.sh"
+alias newplaylists="cd /mnt/b/Music/;sh ~/scripts/rip/audio/genm3u_audioplaylist.sh;~/scripts/rip/audio/newplaylist.sh"
 #UZBL
-alias uzblweb="$HOME/.config/uzbl/scripts/uzbl_tabbed.py & "
+alias uzblweb="$HOME/.config/uzbl/scripts/uzbl-tabbed & "
+#vimprobable2
+alias vimprob2="sh ~/scripts/net/strttabbedvimprobable2.sh"
 
 ## Adobe Air Apps
 #alias destroytwitter="adobe-air /opt/DestroyTwitter172B/DestroyTwitter172B.air &"
@@ -157,9 +161,10 @@ alias tronad="/usr/local//bin/armagetronad"
 #alias idesktool="~/.idesktop/idesktool"
 #alias mediainfohtm="mediainfo --Output=HTML " 
 alias vlcremote="vlc --control lirc "
-alias vlctv="v4l2-ctl -i 1 && vlc --hdtv-fix --aspect-ratio=16:9 --deinterlace-mode=b --disable-screensaver --control lirc /dev/video0"
+alias vlctv="vlc --hdtv-fix --aspect-ratio=16:9 --deinterlace-mode=b --disable-screensaver --control lirc /dev/video0"
 alias mplayertv="mplayer -ao alsa -vf pp=lb /dev/video0 "
-alias weechat="/usr/local/bin/weechat-curses"
+#alias mplayerscrnshot="mplayer -vf -ao null "
+alias weechat="weechat-curses"
 alias fbcmd="/usr/local/fbcmd/fbcmd.php"
 
 # Office
@@ -246,4 +251,3 @@ alias wallpaperflcl=-"feh --bg-center ~/images/wallpaper/1440-900-FLCL-bw-2.png"
 #####################
 ##   End Aliases   ##
 #####################
-
