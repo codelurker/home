@@ -24,146 +24,34 @@ Xft.hintstyle:  hintslight
 !*background: #262626
 !*background: #1e1512
 !*background: #19191a
-*background:   rgb:0e/0e/0e
+!*background: rgb:0e/0e/0e
+*background: #72886d
 !FG
 !*foreground: #006e85
-*foreground:   #a49595
+!*foreground: #a49595
 !*foreground: #686868
 !*foreground: #80724e
+*foreground: #0a0a0a
 !Cursor
 *cursorColor: #7e0536
 !*cursorColor: #80724e
-! Theme 0
-! Black
-!*color0: #060101
-!*color8: #66825d
-! Red
-!*color1: #ffa07a
-!*color9: #e9967a
-! Green
-!*color2: #527b66
-!*color10: #4c5f46
-! Yellow
-!*color3: #ded838
-!*color11: #efef60
-! Blue
-!*color4: #5492ef
-!*color4: #485E6C
-!*color12: #5492ef
-!*color12: #485E6C
-! Magenta
-!*color5: #967395
-!*color13: #826ab1
-! Cyan
-!*color6: #69a2b0
-!*color14: #2d9bb7
-! White
-!*color7: #b3b3b3
-!*color15: #eeeeef
 !#
-! Theme 1
-! Black
-!*color0: #0a0a0a
-!*color8: #0a0a0a
-! Red
-!*color1: #f92672
-!*color9: #f92672
-! Green
-!*color2: #19ba68
-!*color10: #19ba68
- !Yellow
-!*color3: #f3e675
-!*color11: #f3e675
-! Blue
-!*color4: #5492ef
-!*color12: #5492ef
-! Magenta
-!*color5: #9e6ffe
-!*color13: #9E6FFE
-! Cyan
-!*color6: #5E7175
-!*color14: #A3BABF
-! White
-!*color7: #b3b3b3
-!*color15: #eeeeef
-!#
-!Theme 2
-! Black
-!*color0: #382d22
-!*color8: #4a3f2e
-! Red
-*color1: #c37b5f
-*color9: #e19688
-! Green
-!*color2: #9cb955
-!*color10: #c0d584
-!Yellow
-!*color3: #bba85b
-!*color11: #dbc585
-! Blue
-!*color4: #748e9b
-!*color12: #a3bac5
-! Magenta
-!*color5: #925e5a
-!*color13: #ba8092
-! Cyan
-!*color6: #5f9566
-!*color14: #8cb9a2
-! White
-!*color7: #bdbc8f
-!*color15: #dbd5ba
-!#
-!Theme3
-! Black
-!*color0: #120d0d
-!*color8: #0a0404
-! Red
-!*color1: #b03232
-!*color9: #b50b0b
-! Green
-!*color2: #229f8f
-!*color10: #057e6e
-!Yellow
-!*color3: #968e4d
-!*color11: #aea241
-! Blue
-!*color4: #8e97c1
-!*color12: #5d6485
-! Magenta
-!*color5: #936592
-!*color13: #9b589a
-! Cyan
-!*color6: #73afb0
-!*color14: #5edfe1
-! White
-!*color7: #bcc1c0
-!*color15: #7b807f
-
-! jwr dark
-!black
-*color0:  #333333
-*color8:  #454545
-!red
-*color1:  #8C4665
-*color9:  #BF4D80
-!green
-*color2:  #287373
-*color10: #53A6A6
-!yellow
-*color3:  #7C9AA6
-*color11: #8FBCBF
-!blue
-*color4:  #395573
-*color12: #477AB3
-!magenta
-*color5:  #5E468C
-*color13: #7E62B3
-!cyan
-*color6:  #31658C
-*color14: #6096BF
-!white
-*color7:  #808080
-*color15: #B0B0B0
+*color0:     rgb:00/00/00
+*color1:     rgb:bf/46/46
+*color2:     rgb:67/b2/5f
+*color3:     rgb:cf/c4/4e
+*color4:     rgb:51/60/83
+*color5:     rgb:ca/6e/ff
+*color6:     rgb:92/b2/f8
+*color7:     rgb:d5/d5/d5
+*color8:     rgb:00/00/00
+*color9:     rgb:f4/8a/8a
+*color10:    rgb:a5/d7/9f
+*color11:    rgb:e1/da/84
+*color12:    rgb:a2/bb/ff
+*color13:    rgb:e2/b0/ff
+*color14:    rgb:ba/cd/f8
+*color15:    rgb:d5/d5/d5
 
 URxvt*termName:                   rxvt-256color
 ! font preference
@@ -227,8 +115,10 @@ URxvt*utmpInhibit:        true
 URxvt*perl-lib:           /usr/lib/urxvt/perl/
 URxvt*perl-ext-common: default,matcher
 !URxvt*urlLauncher:        urxvt-to-uzbl.sh
-URxvt*urlLauncher:        conkeror
 !URxvt*urlLauncher:        conkeror
+!URxvt*urlLauncher:        conkeror
+URxvt*urlLauncher:        vimprobable2
+URxvt*urlLauncher:        vimprobable2
 !! END urlLauncher settings !!
 !tabs
 !URxvt*tabbed.hide              true

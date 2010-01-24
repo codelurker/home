@@ -97,7 +97,7 @@ screen -t ssh 6
 bind f eval "caption splitonly" "hardstatus ignore"
 bind F eval "caption always"    "hardstatus alwayslastline"
 # Status
-hardstatus alwayslastline '%{= .k} %{.r}%n%{= 3} %= %{= .k}%-w%{.k}%n%{.r}`%{.w}%t%{-b r}%{.k}%+w %= %{.w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y |%{.k}%H|' 
+hardstatus alwayslastline '%{= .k} %{.w}%n%{= 3} %= %{= .k}%-w%{.k}%n%{.r}`%{.w}%t%{-b r}%{.k}%+w %= %{.w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y |%{.k}%H|' 
 # bind = resize =
 # bind + resize +1
 # bind - resize -1

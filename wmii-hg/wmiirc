@@ -15,19 +15,20 @@ noticetimeout=5
 noticebar=/rbar/!notice
 
 # Colors tuples: "<text> <background> <border>"
-WMII_NORMCOLORS='#686868 #0a0a0a #2a2929'
-WMII_FOCUSCOLORS='#767474 #0b0b0b #383737'
+WMII_NORMCOLORS='#0a0a0a #72886d #2a2929'
+WMII_FOCUSCOLORS='#d7d1d1 #454a57 #383737'
 
-WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/wallpapernew2.png'
+WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/3120x1050-GreenPrint-Arch.png'
 WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_TERM="urxvt -title 'shell'"
-WMII_UCOM="urxvt -title screen"
-WMII_UEDIT="urxvt -title edit"
+WMII_UCOM="urxvt -title 'screen'"
+WMII_UEDIT="urxvt -title 'edit'"
 WMII_FBROWSER="thunderbird3"
 WMII_WBROWSER="conkeror"
 WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
+WMII_MUSICPLAYER="urxvt -title MOC -fn "xft:smoothansi:pixelsize=11:antialias=true:hinting=true""
 
 # Menu history
 hist="$(wmiir namespace)/history"
@@ -51,43 +52,43 @@ wmiir write /tagrules <<!
 !
 
 # Status Bar Info
-#WMII_STATUSCOLORS='#aba2a2 #0a0a0a #383737'
-WMII_STATUSCOLORS='#b7bec4 #03111b #44494d'
+WMII_STATUSCOLORS='#0a0a0a #72886d #2a2929'
+#WMII_STATUSCOLORS='#b7bec4 #03111b #44494d'
 #WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
 status() {
     echo -n $(date +'%R:%S %m/%d/%Y') 
 }
 #Uptime - Update
-#WMII_UPTIMECOLORS='#aba2a2 #0a0a0a #383737'
-WMII_UPTIMECOLORS='#b7bec4 #03111b #44494d'
+WMII_UPTIMECOLORS='#0a0a0a #72886d #2a2929'
+#WMII_UPTIMECOLORS='#b7bec4 #03111b #44494d'
 #WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
 uptimebar() {
         echo -n $($HOME/.wmii-hg/scripts/uptime.sh) "-" Updates: $(perl $HOME/scripts/conky-scripts/updates/arch-updates/conky-updates.pl)
 }
 #TEMPBar
-#WMII_TEMPCOLORS='#aba2a2 #0a0a0a #383737'
-WMII_TEMPCOLORS='#b7bec4 #03111b #44494d'
+WMII_TEMPCOLORS='#0a0a0a #72886d #2a2929'
+#WMII_TEMPCOLORS='#b7bec4 #03111b #44494d'
 #WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
 tempbar() {
         echo -n $($HOME/.wmii-hg/scripts/checktemp.sh)
 }
 #NETCOREBar
-#WMII_NETCORECOLORS='#aba2a2 #0a0a0a #383737'
-WMII_NETCORECOLORS='#b7bec4 #03111b #44494d'
+WMII_NETCORECOLORS='#0a0a0a #72886d #2a2929'
+#WMII_NETCORECOLORS='#b7bec4 #03111b #44494d'
 #WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
 netcorebar() {
         echo -n $($HOME/.wmii-hg/scripts/mcorebar.sh)
 }
 #WeatherBar
-#WMII_WEATHERCOLORS='#aba2a2 #0a0a0a #383737'
-WMII_WEATHERCOLORS='#b7bec4 #03111b #44494d'
+WMII_WEATHERCOLORS='#0a0a0a #72886d #2a2929'
+#WMII_WEATHERCOLORS='#b7bec4 #03111b #44494d'
 #WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
 weatherbar() {
         echo -n $($HOME/.wmii-hg/scripts/check_weather.sh)
 }
 #MOCBar
-#WMII_MOCCOLORS='#aba2a2 #0a0a0a #383737'
-WMII_MOCCOLORS='#b7bec4 #03111b #44494d'
+WMII_MOCCOLORS='#0a0a0a #72886d #2a2929'
+#WMII_MOCCOLORS='#b7bec4 #03111b #44494d'
 #WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
 mocbar() {
         echo -n $($HOME/.wmii-hg/scripts/mocplay.sh) "-" Vol: $($HOME/.wmii-hg/scripts/vol.sh)
@@ -253,8 +254,10 @@ events() {
 		wmiir xwrite /ctl view $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
 	Key $MODKEY-Return
 		eval wmiir setsid $WMII_TERM &
+        Key $MODKEY-Mod1-m
+                eval wmiir setsid $WMII_MUSICPLAYER & 
         Key $MODKEY-Mod1-n
-                  eval wmiir setsid $WMII_MPLAYER &
+               eval wmiir setsid $WMII_MPLAYER &
         Key $MODKEY-n
 		eval wmiir setsid $WMII_WBROWSER &
         Key $MODKEY-Shift-n
