@@ -121,12 +121,23 @@ alias gitcb="git-create-branch"
 
 # gc      => git checkout master
 # gc bugs => git checkout bugs
-function gc {
+function gitco {
   if [ -z "$1" ]; then
       git checkout master
   else
       git checkout $1
   fi
+}
+
+ghclone ()
+{   
+    gh_url=${1:-`pbpaste`};
+    co_dir=${HOME}/Code/sources/$(echo $gh_url | sed -e 's/^git:\/\/github.com\///; s/\//-/; s/\.git$//');
+    if [ -d $co_dir ]; then
+        cd $co_dir && git pull origin master;
+    else
+        git clone "${gh_url}" "${co_dir}" && cd "${co_dir}";
+    fi
 }
 
 # Screen Aliases
