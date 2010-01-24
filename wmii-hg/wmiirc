@@ -23,7 +23,7 @@ WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_TERM="urxvt -title 'shell'"
-WMII_UCOM="urxvt -title 'screen'"
+WMII_UCOM="urxvt -title screen -bg '#485349'"
 WMII_UEDIT="urxvt -title 'edit'"
 WMII_FBROWSER="thunderbird3"
 WMII_WBROWSER="conkeror"
