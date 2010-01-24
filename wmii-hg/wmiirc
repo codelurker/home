@@ -23,12 +23,12 @@ WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_TERM="urxvt -title 'shell'"
-WMII_UCOM="urxvt -title screen -bg '#485349'"
-WMII_UEDIT="urxvt -title 'edit'"
+WMII_UCOM="urxvt -title screen -bg '#485349' -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true'"
+WMII_UEDIT="urxvt -title edit -bg '#485349' -fn 'xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true'"
 WMII_FBROWSER="thunderbird3"
-WMII_WBROWSER="conkeror"
+WMII_WBROWSER="sh ~/scripts/net/strttabbedvimprobable2.sh"
 WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
-WMII_MUSICPLAYER="urxvt -title MOC -fn "xft:smoothansi:pixelsize=11:antialias=true:hinting=true""
+WMII_MUSICPLAYER="urxvt -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
 
 # Menu history
 hist="$(wmiir namespace)/history"

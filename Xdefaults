@@ -55,7 +55,8 @@ Xft.hintstyle:  hintslight
 
 URxvt*termName:                   rxvt-256color
 ! font preference
-URxvt*font:                       xft:Pragmata:pixelsize=13:antialias=true:hinting=true
+!URxvt*font:                       xft:Pragmata:pixelsize=13:antialias=true:hinting=true
+URxvt*font:                       xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
 URxvt*boldFont:                   xft:Pragmata:pixelsize=14:antialias=true:bold:hinting=true
 URxvt*italicFont:                 xft:Inconsolata:size=13:antialias=true:hinting=true
 URxvt*bolditalicFont:             xft:Inconsolata:size=13:antialias=true:hinting=true
