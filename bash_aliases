@@ -109,7 +109,7 @@ yaosearch() {
 
 # Powerpill
 # sudo powerpill -Syu by typing pacup (sudo must be installed and configured first)
-alias powSy="sudo powerpill -Syu"
+alias powSu="sudo powerpill -Syu"
 # sudo powerpill -S by typing pac
 alias powS="sudo powerpill -S"
 # sudo powerpill -R by typing pac
