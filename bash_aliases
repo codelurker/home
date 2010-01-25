@@ -75,6 +75,12 @@ alias pac="sudo pacman -S"
 alias pacR="sudo pacman -R"
 # sudo pacman -U by typing pac
 alias pacU="sudo pacman -U"
+# Display information about a given package in the repositories
+alias powSi='pacman -Si'
+# Display information about a given package in the local database
+alias pacQi='pacman -Qi'
+# Search for package(s) in the local database
+alias pacQs='pacman -Qs'
 # colorized pacman output with pacs alias:
 alias pacs="pacsearch"
 pacsearch() {
@@ -100,6 +106,31 @@ yaosearch() {
      -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' ) \
      \033[0m"
 }
+
+# Powerpill
+# sudo powerpill -Syu by typing pacup (sudo must be installed and configured first)
+alias powSy="sudo powerpill -Syu"
+# sudo powerpill -S by typing pac
+alias powS="sudo powerpill -S"
+# sudo powerpill -R by typing pac
+alias powR="sudo powerpill -R"
+# sudo powerpill -U by typing pac
+alias powU="sudo powerpill -U"
+# Display information about a given package in the repositories
+alias powSi='powerpill -Si'
+# Display information about a given package in the local database
+alias powQi='powerpill -Qi'
+# Search for package(s) in the local database
+alias powQs='powerpill -Qs'
+powsearch() {
+    echo -e "$(powerpill -Ss "$@" | sed \
+    -e 's#^core/.*#\\033[1;31m&\\033[0;37m#g' \
+    -e 's#^extra/.*#\\033[0;32m&\\033[0;37m#g' \
+    -e 's#^community/.*#\\033[1;35m&\\033[0;37m#g' \
+    -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' ) \
+    \033[0m"
+}
+
 
 # Git Aliases
 alias gitb="git branch -a -v"
