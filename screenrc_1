@@ -94,7 +94,7 @@ bind '}' history
 
 # shelltitle '$ | '
 screen -t shell 0  
-screen -t irc 1 weechat-curses
+screen -t irc 1 irssi
 screen -t cim 2 centerim
 screen -t t 3 $HOME/apps/bin/bashtc
 screen -t w 4 sh $HOME/scripts/system/w.sh
@@ -109,8 +109,8 @@ bind F eval "caption always"    "hardstatus alwayslastline"
 # Backticks
 backtick 1 30 30 cat $HOME/.get_mail
 # Status
-caption always '%{= .w} %{.b}Load: %l %= %{.r}| %= %{.b}%1`'
-hardstatus alwayslastline '%{= .k} %{.w}%n%{= 3} %= %{= .g}%-w%{.w}%n%{.r}`%{.w}%t%{-b r}%{.g}%+w %= %{.w}%c %{b}- %{w}%m%{.b}/%{w}%d%{.b}/%{.w}%y |%{.k}%H|'  
+caption always '%{= w} %{b}Load: %l %= %{r}| %= %{b}%1`'
+hardstatus alwayslastline '%{= k} %{w}%n%{= 3} %= %{= g}%-w%{w}%n%{r}`%{w}%t%{-b r}%{g}%+w %= %{w}%c %{b}- %{w}%m%{b}/%{w}%d%{b}/%{w}%y |%H|'  
 # bind = resize =
 # bind + resize +1
 # bind - resize -1
