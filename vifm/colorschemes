@@ -1,1 +1,22 @@
-/home/mredd/.vifm/colorschemes
+# ~/.vifm/colorscheme
+# 256Color Theme Jew'd
+#  MreDD --
+#
+## 
+# COLOR=Window_name=foreground_color_number=background_color_number
+##
+
+COLORSCHEME=jew'd
+DIRECTORY=$HOME
+COLOR=MENU=100=80
+COLOR=BORDER=127=80
+COLOR=WIN=88=80
+COLOR=STATUS_BAR=96=default
+COLOR=CURR_LINE=16=81
+COLOR=DIRECTORY=30=black
+COLOR=LINK=60=80
+COLOR=SOCKET=49=black
+COLOR=DEVICE=64=81
+COLOR=EXECUTABLE=25=black
+COLOR=SELECTED=21=80
+COLOR=CURRENT=17=16
