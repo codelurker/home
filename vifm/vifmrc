@@ -85,8 +85,8 @@ RUN_EXECUTABLE=1
 
 BOOKMARKS=H=/home/mredd=../
 BOOKMARKS=z=/home/mredd/.vifm=../
-BOOKSMARKS=d/home/mredd/dls=../
-BOOKSMARKS=m=/mnt=../
+BOOKSMARKS=D/home/mredd/dls=../
+BOOKSMARKS=M=/mnt=../
 
 # COMMAND=command_name=action
 # The following macros can be used in a command
