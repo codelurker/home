@@ -95,10 +95,10 @@ bind '}' history
 
 # shelltitle '$ | '
 screen -t shell 0 
-screen -t mc 1 mc ~/ ~/mnt
+screen -t fm 1 vifm $HOME /mnt
 screen -t www 2 elinks https://ssl.scroogle.org
-screen -t edit1 3 
-screen -t edit2 4
+screen -t vim 3 
+screen -t tnet 4
 screen -t ftp 5
 screen -t ssh 6
 screen -t git 7
