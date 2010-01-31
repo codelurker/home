@@ -110,7 +110,7 @@ screen -t git 7
 bind f eval "caption splitonly" "hardstatus ignore"
 bind F eval "caption always"    "hardstatus alwayslastline"
 # Status
-hardstatus alwayslastline '%{= k} %{w}%n%{= 3} %= %{= m}%-w%{w}%n%{r}`%{w}%t%{-b r}%{m}%+w %= %{.w}%c %{b}- %{w}%m%{b}/%{w}%d%{b}/%{w}%y |%H|' 
+hardstatus alwayslastline '%{= k} %{w}%n%{= 3} %= %{= r}%-w%{w}%n%{r}`%{w}%t%{-b r}%{r}%+w %= %{.w}%c %{b}- %{w}%m%{b}/%{w}%d%{b}/%{w}%y |%H|' 
 # bind = resize =
 # bind + resize +1
 # bind - resize -1
