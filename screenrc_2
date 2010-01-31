@@ -101,7 +101,7 @@ screen -t vim 2 vim
 #screen -t tnet 4
 #screen -t ftp 5
 #screen -t ssh 6
-screen -t web 3 
+screen -t web 3 lftp
 screen -t ssh 4 
 screen -t git 5
 #
