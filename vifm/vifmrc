@@ -1,20 +1,11 @@
-# You can edit this file by hand.
-# The # character at the beginning of a line comments out the line.
-# Blank lines are ignored.
-# The basic format for each item is shown with an example.
-# The '=' character is used to separate fields within a single line.
-# Most settings are true = 1 or false = 0.
+#~/.vifm/vifmrc
+# MreDD - my vifmrc
+#
 
-# This is the actual command used to start vi.  The default is vi.
-# If you would like to use another vi clone such as Vim, Elvis, or Vile
-# you will need to change this setting.
-
+# Default Editor
 VI_COMMAND=vim
-# VI_COMMAND=vim
-# VI_COMMAND=elvis -G termcap
-# VI_COMMAND=vile
 
-# Trash Directory
+#Trash Directory
 # The default is to move files that are deleted with dd or :d to
 # the trash directory.  1 means use the trash directory 0 means
 # just use rm.  If you change this you will not be able to move
@@ -27,7 +18,7 @@ USE_TRASH=1
 # Show only one Window
 # If you would like to start vifm with only one window set this to 1
 
-USE_ONE_WINDOW=0
+USE_ONE_WINDOW=1
 
 # Screen configuration.  If you would like to use vifm with
 # the screen program set this to 1.
@@ -88,7 +79,6 @@ BOOKMARKS=z=/home/mredd/.vifm=../
 BOOKSMARKS=D/home/mredd/dls=../
 BOOKSMARKS=M=/mnt=../
 
-# COMMAND=command_name=action
 # The following macros can be used in a command
 # %a is replaced with the user arguments.
 # %f the current selected file, or files.
@@ -96,26 +86,19 @@ BOOKSMARKS=M=/mnt=../
 # %d the current directory name.
 # %D the other window directory name.
 # %m run the command in a menu window
+# COMMAND=command_name=action
 
-
-# The file type is for the default programs to be used with
-# a file extension. 
-# FILETYPE=description=extension1,extension2=defaultprogram, program2
-# FILETYPE=Web=html,htm,shtml=links,mozilla,elvis
-# would set links as the default program for .html .htm .shtml files
-# The other programs for the file type can be accessed with the :file command
-# The command macros %f, %F, %d, %F may be used in the commands.
-# The %a macro is ignored.  To use a % you must put %%.
-
-
-# For automated FUSE mounts, you must register an extension with FILETYPE=..
+# FileTypes - Open Files by type
 # in the following format:
-# FILETYPE=description=extensions=FUSE_MOUNT|some_mount_command using %SOURCE_FILE and %DESTINATION_DIR variables
-# %SOURCE_FILE and %DESTINATION_DIR are filled in by vifm at runtime.
-# A sample line might look like this:
-# FILETYPE=FuseZipMount=zip,jar,war,ear=FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR
+FILETYPE=Web=html,htm,shtml=vimprobable2 %f &
+FILETYPE=Image=gif,jpg,png=gimp %f &
+FILETYPE=PDFLike=pdf=apvlv&
+FILETYPE=PS=ps=gv %f &
+FILETYPE=Video=avi,divx,mov,mpg,mpeg,ogm,wmv=mplayer -ao alsa %f
+FILETYPE=Flash=flv,swf=mplayer %f
+FILETYPE=Sound=flac,m4a,mp3,ogg,wav,wma=mplayer %f
+FILETYPE=Stream=m3u,pls=mplayer -playlist %f
 
 # The FUSE_HOME directory will be used as a root dir for all FUSE mounts.
 # Unless it exists with write/exec permissions set, vifm will attempt to create it.
-
 FUSE_HOME=/tmp/vifm_FUSE
