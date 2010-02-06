@@ -1,0 +1,402 @@
+servers = (
+  {
+    address = "";
+    chatnet = "Pyrr";
+    port = "";
+    #password = "";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "";
+    chatnet = "Surge";
+    port = "";
+    password = "";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "";
+    chatnet = "Inverted";
+    port = "";
+    password = "";
+    #password = "";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "";
+    chatnet = "Relay";
+    port = "";
+    password = "";
+    #password = "";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "";
+    chatnet = "Efnet";
+    port = "";
+    password = "";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "";
+    chatnet = "Pyrrhous";
+    port = "";
+    #password = ""
+    password = "";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+chatnets = {
+  EFNet = { 
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "3";
+    max_whois = "1";
+  };
+  Inverted = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "5";
+    max_whois = "4";
+    max_query_chans = "5";
+    autosendcmd = "/msg NickServ identify ;wait 2000";
+  };
+  Pyrrhous = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+    autosendcmd = "^QUOTE PASS ;wait 1000";
+  };
+  Relay = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "3";
+    max_whois = "30";
+    autosendcmd = "";
+  };
+  Ghost = { type = "IRC"; };
+  RelayChat = { type = "IRC"; };
+  Pyrr = { type = "IRC"; };
+  Surge = { type = "IRC"; };
+};
+
+channels = (
+  { name = "#pyrrhous"; chatnet = "Pyrrhous"; autojoin = "Yes"; },
+  { name = "#irie"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#main"; chatnet = "Relay"; autojoin = "Yes"; },
+  { name = "#opers"; chatnet = "Relay"; autojoin = "No"; }
+);
+
+aliases = {
+  J = "join";
+  WJOIN = "join -window";
+  WQUERY = "query -window";
+  LEAVE = "part";
+  BYE = "quit";
+  EXIT = "quit";
+  SIGNOFF = "quit";
+  DESCRIBE = "action";
+  DATE = "exec - -o date | cut -c1-11,25-29";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WI = "whois";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  W = "who";
+  N = "names";
+  M = "msg";
+  T = "topic";
+  C = "clear";
+  CL = "clear";
+  K = "kick";
+  KB = "kickban";
+  KN = "knockout";
+  BANS = "ban";
+  B = "ban";
+  MUB = "unban *";
+  UB = "unban";
+  IG = "ignore";
+  UNIG = "unignore";
+  SB = "scrollback";
+  UMODE = "mode $N";
+  WC = "window close";
+  WN = "window new hide";
+  SV = "say Irssi $J ($V) - http://irssi.org/";
+  GOTO = "sb goto";
+  CHAT = "dcc chat";
+  RUN = "SCRIPT LOAD";
+  CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
+  SBAR = "STATUSBAR";
+  INVITELIST = "mode $C +I";
+  Q = "QUERY";
+  "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
+  EXEMPTLIST = "mode $C +e";
+  ATAG = "WINDOW SERVER";
+  thedate = "exec - -o date";
+  mute = "exec amixer set Master toggle";
+  volup = "exec amixer set PCM 5%+";
+  voldwn = "exec amixer set PCM 5%-";
+  mocp = "exec mocp -G";
+  mocn = "exec mocp -f";
+  mocr = "exec mocp -r";
+  mocs = "exec mocp -s";
+  npmoc = "exec -o ~/scripts/conky-scripts/moc-irssi-MircColors.sh";
+  npmplayer = "exec -o ~/.wmii-hg/scripts/nmply-mirc.sh";
+  onvlc = "exec -o ~/.wmii-hg/scripts/onvc-mirc.sh";
+  mysysinfo = "exec - -o ~/scripts/system/sysinfo.sh";
+  myuptime = "exec - -o ~/scripts/system/uptime.sh";
+  nsrizon = "^msg nickserv identify ";
+  nsskynet = "^msg NickServ identify ";
+  nsinverted = "^msg in'nickserv identify ";
+  nsrelaychat = "^msg nickserv identify ";
+  oprelay = "oper  ";
+  authoOf = "^msg oOf auth ";
+  google = "say http://www.google.com/search?hl=en&q=$0&btnG=Google+Search";
+  urban = "say http://www.urbandictionary.com/define.php?term=$0";
+  fortune = "exec - -o fortune -s";
+  forcow = "exec - -o fortune | cowthink -f ren";
+  fbash = "exec - -o figlet -d ~/.figfonts/ -f slant $0-";
+  figlet = "exec - -o figlet -d ~/.figfonts/  -f";
+  nsfreenode = "^msg Nickserv identify ";
+  nzbstat = "^msg #pyrrhous !sabnzbd stats";
+  nzbqueue = "^msg #pyrrhous !sabnzbd queue";
+  nzbsearch = "!nzbindex search";
+  nzbadd = "^msg #blind !sabnzbd add";
+  authsurge = "^msg AuthServ@Services.GameSurge.net auth ";
+  time = "exec - -o date | cut -c11-23";
+  awayall = "away -all Go Away & Give My Pillow Back!";
+  newzadd = "^msg #pyrrhous !newzleech add -n";
+  weather = "exec - -o ~/scripts/misc/myweather.sh";
+  Surge = "connect Surge";
+  Relayc = "connect Relaychat";
+  imdb = "exec - -o ~/scripts/rip/info/imdb-dump.sh";
+  fcalvin = "exec - -o fortune calvin";
+  farigold = "exec - -o fortune entourage-ari";
+  fiasip = "exec - -o fortune IASIP";
+  fhimym = "exec - -o fortune HIMYM";
+};
+
+statusbar = {
+  # formats:
+  # when using {templates}, the template is shown only if it's argument isn't
+  # empty unless no argument is given. for example {sb} is printed always,
+  # but {sb $T} is printed only if $T isn't empty.
+
+  items = {
+    # start/end text in statusbars
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    topicbarstart = "{topicsbstart}";
+    topicbarend = "{topicsbend}";
+
+    # treated "normally", you could change the time/user name to whatever
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+
+    # treated specially .. window is printed with non-empty windows,
+    # window_empty is printed with empty windows
+    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+    prompt = "{prompt $[.15]itemname}";
+    prompt_empty = "{prompt $winname}";
+    topic = " $topic";
+    topic_empty = " Irssi v$J - http://www.irssi.org";
+
+    # all of these treated specially, they're only displayed when needed
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  # there's two type of statusbars. root statusbars are either at the top
+  # of the screen or at the bottom of the screen. window statusbars are at
+  # the top/bottom of each split window in screen.
+  default = {
+    # the "default statusbar" to be displayed at the bottom of the window.
+    # contains all the normal items.
+    window = {
+      disabled = "no";
+
+      # window, root
+      type = "window";
+      # top, bottom
+      placement = "bottom";
+      # number
+      position = "1";
+      # active, inactive, always
+      visible = "active";
+
+      # list of items in statusbar in the display order
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+        usercount = { };
+      };
+    };
+
+    # statusbar to use in inactive split windows
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      # we want to be at the bottom always
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        # treated specially, this is the real input line.
+        input = { priority = "10"; };
+      };
+    };
+
+    # topicbar
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+settings = {
+  core = {
+    real_name = "";
+    user_name = "";
+    nick = "";
+    timestamp_format = "%H:%M:%S";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { theme = "fluxmod"; };
+  "perl/core/scripts" = {
+    awl_display_key = "$Q%K|%n$H$C$S";
+    awl_block = "-11";
+  };
+};
+hilights = (
+  { text = ""; nick = "yes"; word = "yes"; },
+  { text = ""; nick = "yes"; word = "yes"; }
+);
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = { name = "hilight"; sticky = "yes"; };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#pyrrhous";
+        tag = "Pyrrhous";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#opers";
+        tag = "Pyrrhous";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ef'#blind";
+        tag = "Pyrrhous";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ef'#bitchtits";
+        tag = "Pyrrhous";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#fallin-angels";
+        tag = "Surge";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#tueg";
+        tag = "Surge";
+      }
+    );
+  };
+};
+mainwindows = {
+  3 = { first_line = "8"; lines = "46"; };
+  2 = { first_line = "1"; lines = "7"; };
+};
