@@ -328,6 +328,20 @@ settings = {
     awl_display_key = "$Q%K|%n$H$C$S";
     awl_block = "-11";
   };
+  "irc/dcc" = {
+    dcc_upload_path = "~";
+    dcc_send_replace_space_with_underscore = "yes";
+    dcc_autorename = "no";
+    dcc_autoresume = "no";
+    dcc_timeout = "5min";
+    dcc_autoget = "no";
+    dcc_own_ip = "domain.name";
+    dcc_download_path = "~/dls/botdcc";
+    dcc_file_create_mode = "644";
+    dcc_port = "**** ****";
+    dcc_mirc_ctcp = "yes";
+    dcc_autoaccept_lowports = "yes";
+  };
 };
 hilights = (
   { text = ""; nick = "yes"; word = "yes"; },
