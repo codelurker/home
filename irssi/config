@@ -187,6 +187,7 @@ aliases = {
   farigold = "exec - -o fortune entourage-ari";
   fiasip = "exec - -o fortune IASIP";
   fhimym = "exec - -o fortune HIMYM";
+  ftbbt = "exec - -o fortune tbbt";
 };
 
 statusbar = {
