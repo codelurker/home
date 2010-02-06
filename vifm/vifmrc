@@ -92,7 +92,7 @@ BOOKSMARKS=M=/mnt=../
 # in the following format:
 FILETYPE=Web=html,htm,shtml=vimprobable2 %f &
 FILETYPE=Image=gif,jpg,png=gimp %f &
-FILETYPE=PDFLike=pdf=apvlv&
+FILETYPE=PDFLike=pdf=apvlv &
 FILETYPE=PS=ps=gv %f &
 FILETYPE=Video=avi,divx,mov,mpg,mpeg,ogm,wmv=mplayer -ao alsa %f
 FILETYPE=Flash=flv,swf=mplayer %f
