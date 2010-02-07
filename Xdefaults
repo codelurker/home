@@ -19,39 +19,55 @@ Xft.hinting:    full
 Xft.hintstyle:  hintslight
 
 ! Terminal themes --
-! BG
-!*background: #1A1A1A
-!*background: #262626
-!*background: #1e1512
-!*background: #19191a
-!*background: rgb:0e/0e/0e
-*background: #72886d
-!FG
-!*foreground: #006e85
-!*foreground: #a49595
-!*foreground: #686868
-!*foreground: #80724e
-*foreground: #0a0a0a
-!Cursor
-*cursorColor: #7e0536
-!*cursorColor: #80724e
-!#
-*color0:     rgb:00/00/00
-*color1:     rgb:bf/46/46
-*color2:     rgb:67/b2/5f
-*color3:     rgb:cf/c4/4e
-*color4:     rgb:51/60/83
-*color5:     rgb:ca/6e/ff
-*color6:     rgb:92/b2/f8
-*color7:     rgb:d5/d5/d5
-*color8:     rgb:00/00/00
-*color9:     rgb:f4/8a/8a
-*color10:    rgb:a5/d7/9f
-*color11:    rgb:e1/da/84
-*color12:    rgb:a2/bb/ff
-*color13:    rgb:e2/b0/ff
-*color14:    rgb:ba/cd/f8
-*color15:    rgb:d5/d5/d5
+*background: #202020
+*foreground: #e2e2e5
+
+# Black       = color0 + DarkGray = color8
+# DarkRed     = color1 + Red      = color9
+# DarkGreen   = color2 + Green    = color10
+# DarkYellow  = color3 + Yellow   = color11
+# DarkBlue    = color4 + Blue     = color12
+# DarkMagenta = color5 + Magenta  = color13
+# DarkCyan    = color6 + Cyan     = color14
+# LightGrey   = color7 + White    = color15
+
+# Hornet
+*color0:  #303030
+*color1:  #c03000
+*color2:  #b1d631
+*color3:  #fecf35
+*color4:  #4b5661
+*color5:  #7e8aa2
+*color6:  #4bb5c1
+*color7:  #e2e2e5
+*color8:  #303030
+*color8:  #c03000
+*color10: #b1d631
+*color11: #fecf35
+*color12: #4b5661
+*color13: #7e8aa2
+*color14: #4bb5c1
+*color15: #e2e2e5
+
+
+# Merged
+#*color0:  #000000
+#*color1:  #963C59
+#*color2:  #76B243
+#*color3:  #B2B27F
+#*color4:  #5986B2
+#*color5:  #B250B1
+#*color6:  #698FB2
+#*color7:  #8f8f8f
+#*color8:  #3c414c
+
+#*color9:  #CF6171
+#*color10: #A8FF60
+#*color11: #FFFFB6
+#*color12: #6699CC
+#*color13: #FF73FD
+#*color14: #96CBFE
+#*color15: #F6F3E8
 
 URxvt*termName:                   rxvt-256color
 ! font preference
@@ -117,8 +133,6 @@ URxvt*perl-lib:           /usr/lib/urxvt/perl/
 URxvt*perl-ext-common: default,matcher
 !URxvt*urlLauncher:        urxvt-to-uzbl.sh
 !URxvt*urlLauncher:        conkeror
-!URxvt*urlLauncher:        conkeror
-URxvt*urlLauncher:        vimprobable2
 URxvt*urlLauncher:        vimprobable2
 !! END urlLauncher settings !!
 !tabs
@@ -130,8 +144,7 @@ URxvt*tab-fg:                  95
 URxvt*tab-bg:                  233
 URxvt*tabbed.secondaryScroll:  true
 !URxvt.tabbed.urlLauncher:      urxvt-to-uzbl.sh
-URxvt.tabbed.urlLauncher:        conkeror
-!URxvt*urlLauncher:        conkeror
+URxvt.tabbed.urlLauncher:        vimprobable2
 URxvt*tabbed.matcher.button:   2
 URxvt*tabbed.perl-ext-common: default,matcher
 URxvt*keysym.C-Delete:    perl:matcher
@@ -174,7 +187,7 @@ xpdf*enableFreetype:    yes
 xpdf*antialias:         yes
 xpdf*foreground:        #006e85
 xpdf*background:        #191717
-xpdf*urlCommand:        /usr/bin/firefox %s
+xpdf*urlCommand:        /usr/bin/vimprobable2 %s
 
 ! lal clock --
 
