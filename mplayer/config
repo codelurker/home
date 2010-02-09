@@ -5,13 +5,19 @@ mixer-channel="PCM"
 srate=48000
 #really-quiet="1" #Very very little console output
 vo="xv" #video out
-zoom="1" #Allow sofware scaling if you use x11 for vo from the commandline
+vm=no # Tries to change to a different videomode
+# Used by drivers: dga2, x11, sdl
+x=680 # scale movie to <x> pixels width
+y=384 # scale movie to <y> pixels height
+zoom="yes" #Allow sofware scaling if you use x11 for vo from the commandline
 #aid="0" #audio channel
 sid="0" #subtitle set
 #Display
 double="yes" #double buffering(recommended for subtitles)
 monitoraspect="16:9" #Use for a widescreen laptop so keeps 4:3 content from stretching
-framedrop="1" # For slow machines
+framedrop=no # drop frames, when not in sync (slow CPU, videocard etc)
+vfm=ffmpeg # use FFmpeg's libavcodec video codec family
+# See "mplayer -vfm help" for all available codecs
 hardframedrop="0" #Make sure hard frame drop is off but can turn on easily now
 ##subtitle code
 #set this if you haven't copied your preferred font to ~/.mplayer/subfont.ttf
@@ -31,4 +37,9 @@ subalign="2"
 stop-xscreensaver="yes"
 #Screenshot
 vf-add=screenshot
+slang= en # DVD : display english subtitles if available
+alang= en # DVD : play english audio tracks if available
+osdlevel=1 # don't display OSD at stratup
+fs=no # Enlarges movie window to your desktop's size.
+# Used by drivers: all
 
