@@ -2,7 +2,7 @@
 # Vol Bar
 # MreDD
 #############
-VOLUME=$(amixer sget 'PCM' | tail -n 1 | awk '{print $5}' | tr -d % | tr -d [])
+VOLUME=$(amixer sget 'PCM' | tail -n 1 | awk '{print $5}' | tr -d []%)
 VBARS=$(expr $VOLUME / 10)
 case $VBARS in
         1)
