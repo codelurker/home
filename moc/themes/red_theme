@@ -1,36 +1,35 @@
-# rednblack theme by yyz
-# works good on a light term
-
+# red
+#
 #property		fg	bg	fx
-background =		default	default
-frame =			black	default
-window_title =		black	default
-directory =		red	default
-selected_directory =	black	default	bold
-playlist =		blue	default
-selected_playlist =	black	default	bold
-file =			red	default
-selected_file =		black	default	bold
-marked_file =		red	default	underline
-marked_selected_file = black    default	bold
-info =			red	default
-status =		black	default
-title =			red	default	
-state =			black	default
-current_time =		black	default
-time_left =		black	default
-total_time =		black	default
-time_total_frames =	black	default
-sound_parameters =	black	default
-legend =		black	default	
-disabled =		white	default
-enabled =		black	default
-empty_mixer_bar =	black	default
-filled_mixer_bar =	black	red
-empty_time_bar =	black	default
-filled_time_bar =	black	red
-entry =			black	default
-entry_title =		red	default
-error =			red	default
-message =		black	default
-plist_time =		black	default 
+background           =	 default  default
+frame                =	 blue	  default
+window_title         =	 white	  default
+directory            =	 red	  default
+selected_directory   =	 blue	  default	bold
+playlist             =	 green	  default
+selected_playlist    =	 black	  default	bold
+file                 =	 blue	  default
+selected_file        =	 black	  default	bold
+marked_file          =	 white	  default	underline
+marked_selected_file =   black    default	bold
+info                 =	 blue	  default   bold
+status               =	 blue	  default
+title                =	 red	  default	
+state                =	 white	  default
+current_time         =	 blue	  default
+time_left            =	 green	  default
+total_time           =	 white	  default
+time_total_frames    =	 green	  default
+sound_parameters     =	 blue	  default
+legend               =	 green	  default	
+disabled             =	 black	  default
+enabled              =	 white	  default
+empty_mixer_bar      =	 blue	  default
+filled_mixer_bar     =	 blue	  red
+empty_time_bar       =	 green	  default
+filled_time_bar      =	 green	  red
+entry                =	 white	  default
+entry_title          =	 green	  default
+error                =	 red	  default
+message              =   blue	  default
+plist_time           =   green	  default 

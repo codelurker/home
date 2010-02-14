@@ -5,8 +5,8 @@
  ReadTags		    =   yes
 
 # Music Directory
- MusicDir		    =   "/home/mredd/playlists/"
-
+# MusicDir		     =   "/home/mredd/playlists/"
+ MusicDir           =   "/mnt/b/Music/"
 # How to sort? FileName is the only option for now.
  Sort			    =   FileName
 
@@ -102,7 +102,7 @@
 
 # Theme
 #  Theme             =   crustal_balls
- Theme              =   transparent-background
+ Theme              =   red_theme
 
 # The theme used when running on on xterm
  XTermTheme         =   transparent-background
