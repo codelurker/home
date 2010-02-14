@@ -18,7 +18,7 @@ noticebar=/rbar/!notice
 WMII_NORMCOLORS='#d7d1d1 #454a57 #909090'
 WMII_FOCUSCOLORS='#454a57 #d7d1d1 #0a0a0a'
 
-WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/3120x1050-ocean-jax.png'
+WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/3120x1050-maggotworms-arch.png'
 WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
@@ -30,7 +30,7 @@ WMII_UEDIT="urxvt -title edit -fn 'xft:Liberation Mono:pixelsize=14:antialias=tr
 WMII_FBROWSER="thunderbird3"
 WMII_WBROWSER="sh ~/scripts/net/strttabbedvimprobable2.sh"
 WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
-WMII_MUSICPLAYER="urxvt -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
+WMII_MUSICPLAYER="urxvt -pixmap "$HOME/images/terminal/musicterm1.jpg" -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
 #WMII_MUSICPLAYER="urxvt -title 'MOC' -e mocp"
 
 # Menu history
@@ -63,7 +63,7 @@ status() {
 }
 #Uptime - Update
 #WMII_UPTIMECOLORS='#0a0a0a #72886d #2a2929'
-WMII_STATUSCOLORS='#d7d1d1 #454a57 #909090'
+WMII_UPTIMECOLORS='#d7d1d1 #454a57 #909090'
 #WMII_UPTIMECOLORS='#b7bec4 #03111b #44494d'
 #WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
 uptimebar() {
@@ -71,35 +71,44 @@ uptimebar() {
 }
 #TEMPBar
 #WMII_TEMPCOLORS='#0a0a0a #72886d #2a2929'
-WMII_STATUSCOLORS='#d7d1d1 #454a57 #909090'
+WMII_TEMPCOLORS='#d7d1d1 #454a57 #909090'
 #WMII_TEMPCOLORS='#b7bec4 #03111b #44494d'
-#WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
+#WMII_TEMPCOLORS='#80724e #1e1512 #dbd5ba'
 tempbar() {
         echo -n $($HOME/.wmii-hg/scripts/checktemp.sh)
 }
 #NETCOREBar
 #WMII_NETCORECOLORS='#0a0a0a #72886d #2a2929'
-WMII_STATUSCOLORS='#d7d1d1 #454a57 #909090'
+WMII_NETCORECOLORS='#d7d1d1 #454a57 #909090'
 #WMII_NETCORECOLORS='#b7bec4 #03111b #44494d'
-#WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
+#WMII_NETCORECOLORS='#80724e #1e1512 #dbc585'
 netcorebar() {
         echo -n $($HOME/.wmii-hg/scripts/mcorebar.sh)
 }
 #WeatherBar
 #WMII_WEATHERCOLORS='#0a0a0a #72886d #2a2929'
-WMII_STATUSCOLORS='#d7d1d1 #454a57 #909090'
+WMII_WEATHERCOLORS='#d7d1d1 #454a57 #909090'
 #WMII_WEATHERCOLORS='#b7bec4 #03111b #44494d'
-#WMII_STATUSCOLORS='#80724e #1e1512 #dbd5ba'
+#WMII_WEATHERCOLORS='#80724e #1e1512 #dbd5ba'
 weatherbar() {
         echo -n $($HOME/.wmii-hg/scripts/check_weather.sh)
 }
 #MOCBar
 #WMII_MOCCOLORS='#0a0a0a #72886d #2a2929'
-WMII_STATUSCOLORS='#d7d1d1 #454a57 #909090'
+WMII_MOCCOLORS='#d7d1d1 #454a57 #909090'
 #WMII_MOCCOLORS='#b7bec4 #03111b #44494d'
-#WMII_UPTIMECOLORS='#80724e #1e1512 #dbc585'
+#WMII_MOCCOLORS='#80724e #1e1512 #dbc585'
 mocbar() {
-        echo -n $($HOME/.wmii-hg/scripts/mocplay.sh) "-" Vol: $($HOME/.wmii-hg/scripts/vol.sh)
+        echo -n $($HOME/.wmii-hg/scripts/mocplay.sh)
+}
+
+#VOLBar
+#WMII_VOLCOLORS='#0a0a0a #72886d #2a2929'
+WMII_VOLCOLORS='#d7d1d1 #454a57 #909090'
+#WMII_VOLCOLORS='#b7bec4 #03111b #44494d'
+#WMII_VOLCOLORS='#80724e #1e1512 #dbc585'
+volbar() {
+        echo -n $($HOME/.wmii-hg/scripts/vol-bar.sh)
 }
 
 local_events() { true;}
@@ -224,6 +233,15 @@ events() {
 		while weatherbar | wmiir write /rbar/v_weather; do
 			sleep 60
 		done
+	Action vol
+		set +xv
+		if wmiir remove /rbar/u_vol 2>/dev/null; then
+			sleep 2
+		fi
+		echo $WMII_VOLCOLORS | wmiir create /rbar/u_vol
+		while volbar | wmiir write /rbar/u_vol; do
+			sleep 1
+		done
 	Action moc
 		set +xv
 		if wmiir remove /rbar/u_moc 2>/dev/null; then
@@ -341,6 +359,7 @@ action uptime &
 action temp &
 action netcore &
 action weather &
+action vol &
 action moc &
 
 wi_proglist $PATH >$progsfile &
