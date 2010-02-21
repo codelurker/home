@@ -268,6 +268,7 @@ set ebind = @mode_bind global,-insert
 
 # --- Uzbl tabbed binds ---
 # Tab opening
+@cbind  gt              = event NEW_TAB
 @cbind  t<uri:>_        = event NEW_TAB %s
 @cbind  gp              = sh 'echo "event NEW_TAB `xclip -selection primary -o`" > $4'
 # Closing / resting
