@@ -79,7 +79,7 @@ mocnps=$(/home/mredd/.wmii-hg/scripts/mocnpsong.sh)
 mocnpt=$(/home/mredd/.wmii-hg/scripts/mocnptime.sh)
 # Variables
 # Zipcode
-ZIPCODE="92707"
+ZIPCODE=""
 # Cable Providor ID
 LINEUPID="CA04977"
 TVLISTING="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?method=decideFwdForLineup&zipcode=${ZIPCODE}&setMyPreference=false&lineupId=${LINEUPID}:-"
