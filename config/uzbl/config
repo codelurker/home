@@ -235,17 +235,12 @@ set ebind = @mode_bind global,-insert
 @cbind  R        = reload_ign_cache
 
 # --- Zoom binds ---
-#@cbind  +   = zoom_in
-#@cbind  -   = zoom_out
-#@cbind  T   = toggle_zoom_type
-#@cbind  1   = set zoom_level 1.0
-#@cbind  2   = set zoom_level 2.0
-# --- Zoom binds ---
 @cbind  +   = zoom_in
 @cbind  -   = zoom_out
 @cbind  T   = toggle_zoom_type
 @cbind  1   = set zoom_level 1.0
 @cbind  2   = set zoom_level 2.0
+
 
 # --- Appearance binds ---
 @cbind  _t   = toggle_status
@@ -272,7 +267,8 @@ set ebind = @mode_bind global,-insert
 @cbind  t<uri:>_        = event NEW_TAB %s
 @cbind  gp              = sh 'echo "event NEW_TAB `xclip -selection primary -o`" > $4'
 # Closing / resting
-@cbind  gQ              = event CLEAN_TABS
+@cbind  d                 = exit
+@cbind  dC             = event CLEAN_TABS
 
 # Tab navigating
 #@cbind  g<              = event FIRST_TAB
@@ -302,9 +298,6 @@ set preset = event PRESET_TABS
 # --- Handy binds ---
 # Set function shortcut
 @cbind  s<var:>_<value:>_  = set %1 = %2
-# Exit binding
-#@cbind  ZZ                 = exit
-@cbind  d                 = exit
 
 # Dump config to stdout
 @cbind  !dump              = sh "echo dump_config > $4"
