@@ -267,7 +267,7 @@ set ebind = @mode_bind global,-insert
 @cbind  t<uri:>_        = event NEW_TAB %s
 @cbind  gp              = sh 'echo "event NEW_TAB `xclip -selection primary -o`" > $4'
 # Closing / resting
-@cbind  d                 = exit
+@cbind  dc                 = exit
 @cbind  dC             = event CLEAN_TABS
 
 # Tab navigating
