@@ -217,13 +217,13 @@ alias scan="scanimage -L"
 
 # DVD Backup - Rip
 #############
-alias dvdbackupinfo="dvdbackup -i -i /dev/sr0 -I"
+alias dvdbkupinfo="dvdbackup -i -i /dev/sr0 -I"
 alias dvdbkupmain="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -F"
 alias dvdbkupall="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -M"
-alias dvdbackuptitleset="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -T "
-alias dvdbackuptitle="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -t "
-alias dvdbackupchapterfrom="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -S "
-alias dvdbackupchapterto="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -e "
+alias dvdbkuptitleset="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -T "
+alias dvdbkuptitle="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -t "
+alias dvdbkupchapterfrom="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -S "
+alias dvdbkupchapterto="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -e "
 
 # Alias to some Applications
 ##################
