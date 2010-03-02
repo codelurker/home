@@ -217,8 +217,8 @@ alias scan="scanimage -L"
 
 # DVD Backup - Rip
 #############
-alias dvdbkupmain="dvdbackup -F -o $HOME/Video/rip/dvd/"
-alias dvdbkupall="dvdbackup -M -o $HOME/Video/rip/dvd/"
+alias dvdbkupmain="dvdbackup -F -o ~/Video/rip/dvd/"
+alias dvdbkupall="dvdbackup -M -o ~/Video/rip/dvd/"
 
 # Alias to some Applications
 ##################
