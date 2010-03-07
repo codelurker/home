@@ -1,6 +1,12 @@
-#!/bin/bash  
+#!/bin/bash
+# Now Playing MOC Script
+# By: MreDD
+# mredd (at) 0tue0.com
 # Small script to echo 
-# Stop | Pause | and What MOC is playing Artist - Song CT/TT
+# Stop | Pause | and What MOC is playing Artist - Song CT/TT - VolBar
+# for use w/IRC Apps.. Spam Your Music
+#########
+
 # Colors
 # Forground
 W='\x0300' # White
@@ -49,10 +55,56 @@ TITLE=`mocp -i | grep SongTitle | cut -f2 -d ":"`
 ALBUM=`mocp -i | grep Album | cut -f2 -d ":"`
 CT=`mocp -i | grep 'CurrentTime' | awk '{print $2}'`
 TT=`mocp -i | grep 'TotalTime' | awk '{print $2}'`
-BITRATE=`mocp -i | grep Bitrate | cut -f2 -d ":"`  
+BITRATE=`mocp -i | grep Bitrate | cut -f2 -d ":"`
+##
+# Vol-Bar
+VOLUME=$(amixer sget 'PCM' | tail -n 1 | awk '{print $5}' | tr -d []%)
+VBARS=$(expr $VOLUME / 10)
+case $VBARS in
+        1)
+                VBAR=$(echo -e "${R})[${T}|${K}---------${R}]")
+                ;;
+        2)
+                VBAR=$(echo -e "${R}[${T}||${K}--------${R}]")
+                ;;
+        3)
+                VBAR=$(echo -e "${R}[${T}|||${K}-------${R}]")
+                ;;
+        4)
+                VBAR=$(echo -e "${R}[${T}||||${K}------${R}]")
+                ;;
+        5)
+                VBAR=$(echo -e "${R}[${T}|||||${K}-----${R}]")
+                ;;
+        6)
+                VBAR=$(echo -e "${R}[${T}||||||${K}----${R}]")
+                ;;
+        7)
+                VBAR=$(echo -e "${R}[${T}|||||||${K}---${R}]")
+                ;;
+        8)
+                VBAR=$(echo -e "${R}[${T}||||||||${K}--${R}]")
+                ;;
+        9)
+                VBAR=$(echo -e "${R}[${T}|||||||||${K}-${R}]")
+                ;;
+        10)
+                VBAR=$(echo -e "${R}[${T}||||||||||${R}]")
+                ;;
+        *)
+                VBAR=$(echo -e "${R}[${K}----------${R}]")
+esac
+STATE="$VOLUME"
+if [ $STATE == "0" ]; then
+    VOL="Muted: $VBAR"
+else
+    VOL="Vol: $VBAR"
+fi 
+VOLBAR=$(~/.wmii-hg/scripts/vol-bar.sh)
 
 if [ "$INFO" == "State: STOP" ];then echo -ne "${K}MOC${O}: ${P}[${K}stop${P}] "
 elif [ "$STATE" == "State: PAUSE" ];then echo -ne "${K}MOC${R}:${LGY} |${GY}pause${LGY}| "
 else 
-echo -ne "${W}np${K}:${BN}$ARTIST ${P}-${LGY}$TITLE ${P}|${BN}$ALBUM "${R}["${LGY}$CT${R}/${P}$TT"${R}]""
+echo -ne "${W}np${K}:${BN}$ARTIST ${P}-${LGY}$TITLE ${P}|${BN}$ALBUM "${R}["${LGY}$CT${R}/${P}$TT"${R}]" $VOL"
+echo ""
 fi
