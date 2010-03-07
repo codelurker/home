@@ -1,13 +1,14 @@
 #!/bin/bash
 # ~/.bashrc
-# http://0tue0.com
+# http://m-redd.com
 # tueGroup
 # Smaller than Life Projects
 # By: MreDD     mredd (at) 0tue0.com
 ##################
 #ssh
 eval `ssh-agent`
-eval `keychain --eval --nogui -Q -q id_rsa`
+/usr/bin/keychain -Q -q --nogui ~/.ssh/id_dsa
+[[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
 # GIT STATUS MAGIC (START)
 GIT_PS1_SHOWDIRTYSTATE=true
 function parse_git_branch {

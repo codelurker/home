@@ -1,6 +1,6 @@
 #!/bin/bash
 # ~/.bash_aliases
-# http://0tue0.com
+# http://m-redd.com
 # tueGroup
 # Smaller than Life Projects
 # By: MreDD
@@ -224,6 +224,10 @@ alias dvdbkuptitleset="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -T "
 alias dvdbkuptitle="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -t "
 alias dvdbkupchapterfrom="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -S "
 alias dvdbkupchapterto="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -e "
+
+#Create DVD
+#############
+alias videots-to-iso="~/scripts/misc/video-to-iso.sh "
 
 # Alias to some Applications
 ##################
