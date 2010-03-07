@@ -5,7 +5,9 @@
 # Smaller than Life Projects
 # By: MreDD     mredd (at) 0tue0.com
 ##################
-
+#ssh
+eval `ssh-agent`
+eval `keychain --eval --nogui -Q -q id_rsa`
 # GIT STATUS MAGIC (START)
 GIT_PS1_SHOWDIRTYSTATE=true
 function parse_git_branch {
