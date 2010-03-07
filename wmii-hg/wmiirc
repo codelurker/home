@@ -16,7 +16,7 @@ noticebar=/rbar/!notice
 
 # Colors tuples: "<text> <background> <border>"
 WMII_NORMCOLORS='#d7d1d1 #454a57 #909090'
-WMII_FOCUSCOLORS='#454a57 #d7d1d1 #0a0a0a'
+WMII_FOCUSCOLORS='#000000 #d7d1d1 #0a0a0a'
 
 WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/3120x1050-maggotworms-arch.png'
 WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
@@ -28,9 +28,10 @@ WMII_UCOM="urxvt -title screen -fn 'xft:Liberation Mono:pixelsize=13:antialias=t
 #WMII_UEDIT="urxvt -title edit -bg '#485349' -fn 'xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true'"
 WMII_UEDIT="urxvt -title edit -fn 'xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true'"
 WMII_FBROWSER="thunderbird3"
-WMII_WBROWSER="sh ~/scripts/net/strttabbedvimprobable2.sh"
+#WMII_WBROWSER="sh ~/scripts/net/strttabbedvimprobable2.sh"
+WMII_WBROWSER="$HOME/.config/uzbl/scripts/uzbl-tabbed"
 WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
-WMII_MUSICPLAYER="urxvt -pixmap "$HOME/images/terminal/musicterm1.jpg" -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
+WMII_MUSICPLAYER="urxvt -pixmap "$HOME/images/wallpapers/no_comment_hd_widescreen_wallpaper_880.jpeg" -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
 #WMII_MUSICPLAYER="urxvt -title 'MOC' -e mocp"
 
 # Menu history
