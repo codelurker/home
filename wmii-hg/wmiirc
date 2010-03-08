@@ -49,9 +49,10 @@ wmiir write /tagrules <<!
 /VLC|MPlayer/ -> ~
 /KDX.*/ -> ~
 /screen|conkeror|uzbl-*|tabbed|vimprobable2/ -> +haon
-#/gedit|leafpad/ -> +edit
+/gedit|leafpad/ -> +edit
 /ssh|web/ -> +web
 /Gimp/ -> ~+art
+/Boxee|boxee/ -> +Boxee
 !
 
 # Status Bar Info
