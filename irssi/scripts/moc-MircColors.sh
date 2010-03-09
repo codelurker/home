@@ -62,7 +62,7 @@ PERCENT=`bc << EOF
 100.0 * $CS / $TS
 EOF
 `
-PBARS=$(expr $PERCENT / 10)
+PBARS=$(expr $PERCENT / 10 | cut -c01-01)
 #
 case $PBARS in
         1)
