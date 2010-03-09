@@ -55,58 +55,104 @@ STATE=`mocp -i | grep State`
 ARTIST=`mocp -i | grep Artist | cut -f2 -d ":"`
 TITLE=`mocp -i | grep SongTitle | cut -f2 -d ":"`
 ALBUM=`mocp -i | grep Album | cut -f2 -d ":"`
-CT=`mocp -i | grep 'CurrentTime' | awk '{print $2}'`
-TT=`mocp -i | grep 'TotalTime' | awk '{print $2}'`
-BITRATE=`mocp -i | grep Bitrate | cut -f2 -d ":"`
+CS=`mocp -i | grep 'CurrentSec' | awk '{print $2}'`
+TS=`mocp -i | grep 'TotalSec' | awk '{print $2}'`
+PERCENT=`bc << EOF
+100.0 * $CS / $TS
+EOF
+`
+
+if [ "$INFO" == "State: STOP" ];then 
+    echo -ne "${K}MOC${T}: ${P}[${T}stop${P}] "
+    echo ""
+elif [ "$STATE" == "State: PAUSE" ];then 
+    echo -ne "${K}MOC${T}:${LGY} |${T}pause${LGY}| "
+    echo ""
+else
+PBARS=$(expr $PERCENT / 10 | cut -c01-01)
+#
+case $PBARS in
+        0)
+                PBAR=$(echo -e "${R}[${G}o${TR}${C}----------${R}]")
+                ;;        
+        1)
+                PBAR=$(echo -e "${R}[${C}-${G}o${TR}${T}---------${R}]")
+                ;;
+        2)
+                PBAR=$(echo -e "${R}[${C}--${G}o${TR}${T}--------${R}]")
+                ;;
+        3)
+                PBAR=$(echo -e "${R}[${C}---${G}o${TR}${T}-------${R}]")
+                ;;
+        4)
+                PBAR=$(echo -e "${R}[${C}----${G}o${TR}${T}------${R}]")
+                ;;
+        5)
+                PBAR=$(echo -e "${R}[${C}-----${G}o${TR}${T}-----${R}]")
+                ;;
+        6)
+                PBAR=$(echo -e "${R}[${C}------${G}o${TR}${T}----${R}]")
+                ;;
+        7)
+                PBAR=$(echo -e "${R}[${C}-------${G}o${TR}${T}---${R}]")
+                ;;
+        8)
+                PBAR=$(echo -e "${R}[${C}--------${G}o${TR}${T}--${R}]")
+                ;;
+        9)
+                PBAR=$(echo -e "${R}[${C}---------${G}o${TR}${T}-${R}]")
+                ;;
+        10)
+                PBAR=$(echo -e "${R}[${C}----------${G}o${TR}${R}]")
+                ;;
+        *)
+                PBAR=$(echo -e "${R}[${G}ooooooooooo${TR}${R}]")
+esac
 ##
 # Vol-Bar
 VOLUME=$(amixer sget 'PCM' | tail -n 1 | awk '{print $5}' | tr -d []%)
 VBARS=$(expr $VOLUME / 10)
 case $VBARS in
         1)
-                VBAR=$(echo -e "${O})[${P}|${K}---------${O}]")
+                VBAR=$(echo -e "${R})[${C}|${K}---------${R}]")
                 ;;
         2)
-                VBAR=$(echo -e "${O}[${P}||${K}--------${O}]")
+                VBAR=$(echo -e "${R}[${C}||${K}--------${R}]")
                 ;;
         3)
-                VBAR=$(echo -e "${O}[${P}|||${K}-------${O}]")
+                VBAR=$(echo -e "${R}[${C}|||${K}-------${R}]")
                 ;;
         4)
-                VBAR=$(echo -e "${O}[${P}||||${K}------${O}]")
+                VBAR=$(echo -e "${R}[${C}||||${K}------${R}]")
                 ;;
         5)
-                VBAR=$(echo -e "${O}[${P}|||||${K}-----${O}]")
+                VBAR=$(echo -e "${R}[${C}|||||${K}-----${R}]")
                 ;;
         6)
-                VBAR=$(echo -e "${O}[${P}||||||${K}----${O}]")
+                VBAR=$(echo -e "${R}[${C}||||||${K}----${R}]")
                 ;;
         7)
-                VBAR=$(echo -e "${O}[${P}|||||||${K}---${O}]")
+                VBAR=$(echo -e "${R}[${C}|||||||${K}---${R}]")
                 ;;
         8)
-                VBAR=$(echo -e "${O}[${P}||||||||${K}--${O}]")
+                VBAR=$(echo -e "${R}[${C}||||||||${K}--${R}]")
                 ;;
         9)
-                VBAR=$(echo -e "${O}[${P}|||||||||${K}-${O}]")
+                VBAR=$(echo -e "${R}[${C}|||||||||${K}-${R}]")
                 ;;
         10)
-                VBAR=$(echo -e "${O}[${P}||||||||||${O}]")
+                VBAR=$(echo -e "${R}[${C}||||||||||${R}]")
                 ;;
         *)
-                VBAR=$(echo -e "${O}[${K}----------${O}]")
+                VBAR=$(echo -e "${R}[${K}----------${R}]")
 esac
 STATE="$VOLUME"
 if [ $STATE == "0" ]; then
-    VOL="Muted: $VBAR"
+    VOL="Muted${T}: $VBAR"
 else
-    VOL="Vol: $VBAR"
+    VOL="${LG}Vol${RT}${T}: $VBAR"
 fi 
 VOLBAR=$(~/.wmii-hg/scripts/vol-bar.sh)
-
-if [ "$INFO" == "State: STOP" ];then echo -ne "${K}MOC${O}: ${P}[${K}stop${P}] "
-elif [ "$STATE" == "State: PAUSE" ];then echo -ne "${K}MOC${R}:${LGY} |${GY}pause${LGY}| "
-else 
-echo -ne "${W}np${K}:${C}$ARTIST ${P}-${LGY}$TITLE ${P}|${C}$ALBUM "${R}["${LGY}$CT${R}/${P}$TT"${R}]" $VOL"
+echo -ne "${W}np${C}:${G}$ARTIST ${C}-${B}$TITLE ${C}|${G}$ALBUM $PBAR ${LGY}(${W}$PERCENT${R}%${LGY}) $VOL"
 echo ""
 fi
