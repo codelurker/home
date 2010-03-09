@@ -62,6 +62,10 @@ PERCENT=`bc << EOF
 100.0 * $CS / $TS
 EOF
 `
+if [ "$INFO" == "State: STOP" ];then echo -ne "${K}MOC${T}: ${P}[${T}stop${P}] "
+    elif [ "$STATE" == "State: PAUSE" ];then echo -ne "${K}MOC${T}:${LGY} |${T}pause${LGY}| "
+    elif [ "$INFO" == "FATAL_ERROR: The server is not running" ];then echo -n "MOC[off]"
+else
 PBARS=$(expr $PERCENT / 10 | cut -c01-01)
 #
 case $PBARS in
@@ -143,10 +147,6 @@ else
     VOL="${LGY}${BK}Vol${RT}${T}: $VBAR"
 fi 
 VOLBAR=$(~/.wmii-hg/scripts/vol-bar.sh)
-
-if [ "$INFO" == "State: STOP" ];then echo -ne "${K}MOC${T}: ${P}[${T}stop${P}] "
-elif [ "$STATE" == "State: PAUSE" ];then echo -ne "${K}MOC${T}:${LGY} |${T}pause${LGY}| "
-else 
-echo -ne "${W}np${T}:${BN}$ARTIST ${T}-${LGY}$TITLE ${T}|${BN}$ALBUM $PBAR ${LG}(${Y}$PERCENT${R}%${LG}) $VOL"
-echo ""
 fi
+echo -ne  "${W}np${T}:${BN}$ARTIST ${T}-${LGY}$TITLE ${T}|${BN}$ALBUM $PBAR ${LG}(${Y}$PERCENT${R}%${LG}) $VOL"  1 200
+echo ""
