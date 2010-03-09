@@ -253,6 +253,7 @@ aha='\E[38;5;252m'
 aia='\E[38;5;253m'
 aja='\E[38;5;254m'
 aka='\E[38;5;255m'
+TR='\E[0m'    # Text Reset
 ##
 # End Colors
 ##
@@ -262,9 +263,59 @@ STATE=`mocp -i | grep State`
 ARTIST=`mocp -i | grep Artist | cut -f2 -d ":"`
 TITLE=`mocp -i | grep SongTitle | cut -f2 -d ":"`
 ALBUM=`mocp -i | grep Album | cut -f2 -d ":"`
-CT=`mocp -i | grep 'CurrentTime' | awk '{print $2}'`
-TT=`mocp -i | grep 'TotalTime' | awk '{print $2}'`
-BITRATE=`mocp -i | grep Bitrate | cut -f2 -d ":"`
+CS=`mocp -i | grep 'CurrentSec' | awk '{print $2}'`
+TS=`mocp -i | grep 'TotalSec' | awk '{print $2}'`
+PERCENT=`bc << EOF
+100.0 * $CS / $TS
+EOF
+`
+
+if [ "$INFO" == "State: STOP" ];then 
+    echo -ne "${aqqqq}MOC${gggg}: ${mmmm}[${aqqqq}stop${mmmm}] "
+    echo ""
+elif [ "$STATE" == "State: PAUSE" ];then 
+    echo -ne "${aqqqq}MOC${gggg}:${zz} |${xxxx}pause${zz}| "
+    echo ""
+else
+PBARS=$(expr $PERCENT / 10 | cut -c01-01)
+#
+case $PBARS in
+        0)
+                PBAR=$(echo -e "${kk}[${kkkkk}o${TR}${jj}----------${kk}]")
+                ;;        
+        1)
+                PBAR=$(echo -e "${kk}[${jj}-${kkkk}o${TR}${jj}---------${kk}]")
+                ;;
+        2)
+                PBAR=$(echo -e "${kk}[${jj}--${kkkk}o${TR}${jj}--------${kk}]")
+                ;;
+        3)
+                PBAR=$(echo -e "${kk}[${jj}---${kkkk}o${TR}${jj}-------${kk}]")
+                ;;
+        4)
+                PBAR=$(echo -e "${kk}[${jj}----${kkkk}o${TR}${jj}------${kk}]")
+                ;;
+        5)
+                PBAR=$(echo -e "${kk}[${jj}-----${kkkk}o${TR}${jj}-----${kk}]")
+                ;;
+        6)
+                PBAR=$(echo -e "${kk}[${jj}------${kkkk}o${TR}${jj}----${kk}]")
+                ;;
+        7)
+                PBAR=$(echo -e "${kk}[${jj}-------${kkkk}o${TR}${jj}---${kk}]")
+                ;;
+        8)
+                PBAR=$(echo -e "${kk}[${jj}--------${kkkk}o${TR}${jj}--${kk}]")
+                ;;
+        9)
+                PBAR=$(echo -e "${kk}[${jj}---------${kkkk}o${TR}${jj}-${kk}]")
+                ;;
+        10)
+                PBAR=$(echo -e "${kk}[${jj}----------${kkkk}o${TR}${kk}]")
+                ;;
+        *)
+                PBAR=$(echo -e "${kk}[${kkkkk}ooooooooooo${TR}${kk}]")
+esac
 ##
 # Vol-Bar
 VOLUME=$(amixer sget 'PCM' | tail -n 1 | awk '{print $5}' | tr -d []%)
@@ -307,13 +358,9 @@ STATE="$VOLUME"
 if [ $STATE == "0" ]; then
     VOL="Muted: $VBAR"
 else
-    VOL="Vol: $VBAR"
+    VOL="${afa}Vol${aqqqq}: $VBAR"
 fi 
 VOLBAR=$(~/.wmii-hg/scripts/vol-bar.sh)
-
-if [ "$INFO" == "State: STOP" ];then echo -ne "${aqqqq}MOC${gggg}: ${mmmm}[${aqqqq}stop${mmmm}] "
-elif [ "$STATE" == "State: PAUSE" ];then echo -ne "${aqqqq}MOC${gggg}:${zz} |${xxxx}pause${zz}| "
-else 
-echo -ne "${nnn}np${a}:${ggg}$ARTIST ${mmmm}-${zz}$TITLE ${mmmm}|${ggg}$ALBUM "${gggg}["${zz}$CT${gggg}/${mmmm}$TT"${gggg}]" $VOL"
+echo -ne "${nnn}np${aqqqq}:${ggg}$ARTIST ${mmmm}-${uuuu}$TITLE ${mmmm}|${ggg}$ALBUM $PBAR ${an}(${aq}$PERCENT${ap}%${an}) $VOL"
 echo ""
 fi
