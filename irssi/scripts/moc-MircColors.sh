@@ -63,47 +63,51 @@ PERCENT=`bc << EOF
 EOF
 `
 
-if [ "$INFO" == "State: STOP" ];then echo -ne "${K}MOC${T}: ${P}[${T}stop${P}] "
-elif [ "$STATE" == "State: PAUSE" ];then echo -ne "${K}MOC${T}:${LGY} |${T}pause${LGY}| "
+if [ "$INFO" == "State: STOP" ];then 
+    echo -ne "${K}MOC${T}: ${P}[${T}stop${P}] "
+    echo ""
+elif [ "$STATE" == "State: PAUSE" ];then 
+    echo -ne "${K}MOC${T}:${LGY} |${T}pause${LGY}| "
+    echo ""
 else
 PBARS=$(expr $PERCENT / 10 | cut -c01-01)
 #
 case $PBARS in
         0)
-                PBAR=$(echo -e "${R}[${G}${BK}o${RT}${T}----------${R}]")
+                PBAR=$(echo -e "${R}[${G}${BK}>${RT}${T}---------${R}]")
                 ;;        
         1)
-                PBAR=$(echo -e "${R}[${T}-${G}${BK}o${RT}${T}---------${R}]")
+                PBAR=$(echo -e "${R}[${G}${BK}o${RT}${T}---------${R}]")
                 ;;
         2)
-                PBAR=$(echo -e "${R}[${T}--${G}${BK}o${RT}${T}--------${R}]")
+                PBAR=$(echo -e "${R}[${T}-${G}${BK}o${RT}${T}--------${R}]")
                 ;;
         3)
-                PBAR=$(echo -e "${R}[${T}---${G}${BK}o${RT}${T}-------${R}]")
+                PBAR=$(echo -e "${R}[${T}--${G}${BK}o${RT}${T}-------${R}]")
                 ;;
         4)
-                PBAR=$(echo -e "${R}[${T}----${G}${BK}o${RT}${T}------${R}]")
+                PBAR=$(echo -e "${R}[${T}---${G}${BK}o${RT}${T}------${R}]")
                 ;;
         5)
-                PBAR=$(echo -e "${R}[${T}-----${G}${BK}o${RT}${T}-----${R}]")
+                PBAR=$(echo -e "${R}[${T}----${G}${BK}o${RT}${T}-----${R}]")
                 ;;
         6)
-                PBAR=$(echo -e "${R}[${T}------${G}${BK}o${RT}${T}----${R}]")
+                PBAR=$(echo -e "${R}[${T}-----${G}${BK}o${RT}${T}----${R}]")
                 ;;
         7)
-                PBAR=$(echo -e "${R}[${T}-------${G}${BK}o${RT}${T}---${R}]")
+                PBAR=$(echo -e "${R}[${T}------${G}${BK}o${RT}${T}---${R}]")
                 ;;
         8)
-                PBAR=$(echo -e "${R}[${T}--------${G}${BK}o${RT}${T}--${R}]")
+                PBAR=$(echo -e "${R}[${T}-------${G}${BK}o${RT}${T}--${R}]")
                 ;;
         9)
-                PBAR=$(echo -e "${R}[${T}---------${G}${BK}o${RT}${T}-${R}]")
+                PBAR=$(echo -e "${R}[${T}--------${G}${BK}o${RT}${T}-${R}]")
                 ;;
         10)
-                PBAR=$(echo -e "${R}[${T}----------${G}${BK}o${RT}${R}]")
+                PBAR=$(echo -e "${R}[${T}---------${G}${BK}O${RT}${R}]")
                 ;;
         *)
-                PBAR=$(echo -e "${R}[${G}${BK}ooooooooooo${RT}${R}]")
+                PBAR=$(echo -e "${R}[${G}${BK}oooooooooo${RT}${R}]")
 esac
 ##
 # Vol-Bar
@@ -151,5 +155,5 @@ else
 fi 
 VOLBAR=$(~/.wmii-hg/scripts/vol-bar.sh)
 echo -ne "${W}np${T}:${BN}$ARTIST ${T}-${LGY}$TITLE ${T}|${BN}$ALBUM $PBAR ${LGY}(${W}$PERCENT${R}%${LGY}) $VOL"
-
+echo ""
 fi

@@ -281,40 +281,40 @@ PBARS=$(expr $PERCENT / 10 | cut -c01-01)
 #
 case $PBARS in
         0)
-                PBAR=$(echo -e "${kk}[${kkkkk}o${TR}${jj}----------${kk}]")
+                PBAR=$(echo -e "${kk}[${annn}>${TR}${jj}---------${kk}]")
                 ;;        
         1)
-                PBAR=$(echo -e "${kk}[${jj}-${kkkk}o${TR}${jj}---------${kk}]")
+                PBAR=$(echo -e "${R}[${annn}o${TR}${jj}---------${kk}]")
                 ;;
         2)
-                PBAR=$(echo -e "${kk}[${jj}--${kkkk}o${TR}${jj}--------${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}-${annn}o${TR}${jj}--------${kk}]")
                 ;;
         3)
-                PBAR=$(echo -e "${kk}[${jj}---${kkkk}o${TR}${jj}-------${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}--${annn}o${TR}${jj}-------${kk}]")
                 ;;
         4)
-                PBAR=$(echo -e "${kk}[${jj}----${kkkk}o${TR}${jj}------${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}---${annn}o${TR}${jj}------${kk}]")
                 ;;
         5)
-                PBAR=$(echo -e "${kk}[${jj}-----${kkkk}o${TR}${jj}-----${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}----${annn}o${TR}${jj}-----${kk}]")
                 ;;
         6)
-                PBAR=$(echo -e "${kk}[${jj}------${kkkk}o${TR}${jj}----${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}-----${annn}o${TR}${jj}----${kk}]")
                 ;;
         7)
-                PBAR=$(echo -e "${kk}[${jj}-------${kkkk}o${TR}${jj}---${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}------${annn}o${TR}${jj}---${kk}]")
                 ;;
         8)
-                PBAR=$(echo -e "${kk}[${jj}--------${kkkk}o${TR}${jj}--${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}-------${annn}o${TR}${jj}--${kk}]")
                 ;;
         9)
-                PBAR=$(echo -e "${kk}[${jj}---------${kkkk}o${TR}${jj}-${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}--------${annn}o${TR}${jj}-${kk}]")
                 ;;
         10)
-                PBAR=$(echo -e "${kk}[${jj}----------${kkkk}o${TR}${kk}]")
+                PBAR=$(echo -e "${kk}[${jj}---------${annn}O${TR}${kk}]")
                 ;;
         *)
-                PBAR=$(echo -e "${kk}[${kkkkk}ooooooooooo${TR}${kk}]")
+                PBAR=$(echo -e "${kk}[${annn}oooooooooo${TR}${kk}]")
 esac
 ##
 # Vol-Bar

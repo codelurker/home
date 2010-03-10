@@ -73,40 +73,40 @@ PBARS=$(expr $PERCENT / 10 | cut -c01-01)
 #
 case $PBARS in
         0)
-                PBAR=$(echo -e "${R}[${G}o${TR}${C}----------${R}]")
+                PBAR=$(echo -e "${R}[${G}${BK}>${TR}${C}---------${R}]")
                 ;;        
         1)
-                PBAR=$(echo -e "${R}[${C}-${G}o${TR}${T}---------${R}]")
+                PBAR=$(echo -e "${R}[${G}${BK}o${TR}${C}---------${R}]")
                 ;;
         2)
-                PBAR=$(echo -e "${R}[${C}--${G}o${TR}${T}--------${R}]")
+                PBAR=$(echo -e "${R}[${C}-${G}${BK}o${TR}${C}--------${R}]")
                 ;;
         3)
-                PBAR=$(echo -e "${R}[${C}---${G}o${TR}${T}-------${R}]")
+                PBAR=$(echo -e "${R}[${C}--${G}${BK}o${TR}${C}-------${R}]")
                 ;;
         4)
-                PBAR=$(echo -e "${R}[${C}----${G}o${TR}${T}------${R}]")
+                PBAR=$(echo -e "${R}[${C}---${G}${BK}o${TR}${C}------${R}]")
                 ;;
         5)
-                PBAR=$(echo -e "${R}[${C}-----${G}o${TR}${T}-----${R}]")
+                PBAR=$(echo -e "${R}[${C}----${G}${BK}o${TR}${C}-----${R}]")
                 ;;
         6)
-                PBAR=$(echo -e "${R}[${C}------${G}o${TR}${T}----${R}]")
+                PBAR=$(echo -e "${R}[${C}-----${G}${BK}o${TR}${C}----${R}]")
                 ;;
         7)
-                PBAR=$(echo -e "${R}[${C}-------${G}o${TR}${T}---${R}]")
+                PBAR=$(echo -e "${R}[${C}------${G}${BK}o${TR}${C}---${R}]")
                 ;;
         8)
-                PBAR=$(echo -e "${R}[${C}--------${G}o${TR}${T}--${R}]")
+                PBAR=$(echo -e "${R}[${C}-------${G}${BK}o${TR}${C}--${R}]")
                 ;;
         9)
-                PBAR=$(echo -e "${R}[${C}---------${G}o${TR}${T}-${R}]")
+                PBAR=$(echo -e "${R}[${C}--------${G}${BK}o${TR}${C}-${R}]")
                 ;;
         10)
-                PBAR=$(echo -e "${R}[${C}----------${G}o${TR}${R}]")
+                PBAR=$(echo -e "${R}[${C}---------${G}${BK}O${TR}${R}]")
                 ;;
         *)
-                PBAR=$(echo -e "${R}[${G}ooooooooooo${TR}${R}]")
+                PBAR=$(echo -e "${R}[${G}${BK}oooooooooo${TR}${R}]")
 esac
 ##
 # Vol-Bar
