@@ -153,6 +153,6 @@ else
     VOL="${G}Vol${RT}${C}: $VBAR"
 fi 
 VOLBAR=$(~/.wmii-hg/scripts/vol-bar.sh)
-echo -ne "${W}np${C}:${G}$ARTIST ${C}-${B}$TITLE ${C}|${G}$ALBUM $PBAR ${LGY}(${W}$PERCENT${R}%${LGY}) $VOL"
+echo -ne "${W}np${C}:${G}$ARTIST ${C}-${B}$TITLE ${C}|${G}$ALBUM $PBAR ${B}(${W}$PERCENT${R}%${B}) $VOL"
 echo ""
 fi
