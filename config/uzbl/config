@@ -176,10 +176,10 @@ set ebind = @mode_bind global,-insert
 @ebind  <Ctrl>e      = event SET_CURSOR_POS -1
 
 # Keycmd injection/append examples.
-#@ebind  <Ctrl>su = event INJECT_KEYCMD \@uri
-#@ebind  <Ctrl>st = event INJECT_KEYCMD \@title
-#@ebind  <Ctrl>du = event APPEND_KEYCMD \@uri
-#@ebind  <Ctrl>dt = event APPEND_KEYCMD \@title
+@ebind  <Ctrl>su = event INJECT_KEYCMD \@uri
+@ebind  <Ctrl>st = event INJECT_KEYCMD \@title
+@ebind  <Ctrl>du = event APPEND_KEYCMD \@uri
+@ebind  <Ctrl>dt = event APPEND_KEYCMD \@title
 
 
 # === Mouse bindings =========================================================
@@ -263,7 +263,7 @@ set ebind = @mode_bind global,-insert
 
 # --- Uzbl tabbed binds ---
 # Tab opening
-@cbind  gt              = event NEW_TAB
+@cbind  gN              = event NEW_TAB
 @cbind  t<uri:>_        = event NEW_TAB %s
 @cbind  gp              = sh 'echo "event NEW_TAB `xclip -selection primary -o`" > $4'
 # Closing / resting
