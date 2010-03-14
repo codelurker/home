@@ -325,8 +325,14 @@ set toggle_cmd_ins = @toggle_modes command insert
 @cbind  gh  = uri http://www.uzbl.org
 
 # --- Yanking & pasting binds ---
-@cbind  yu  = sh 'echo -n $6 | xclip'
-@cbind  yy  = sh 'echo -n $7 | xclip'
+@cbind  yy  = sh 'echo -n $6 | xclip'
+@cbind  YY  = sh 'echo -n $6 | xclip -selection clipboard'
+@cbind  yt  = sh 'echo -n $7 | xclip'
+@cbind  YT  = sh 'echo -n $7 | xclip -selection clipboard'
+@cbind  p   = sh 'echo "set uri = `xclip -o`" > $4'
+@cbind  P   = sh 'echo "set uri = `xclip -selection clipboard -o`" > $4'
+@cbind  'p  = sh 'exec uzbl-browser --uri $(xclip -o)'
+@cbind  'P  = sh 'exec uzbl-browser --uri $(xclip -selection clipboard -o)'
 
 # Go the page from primary selection
 @cbind  p   = sh 'echo "uri `xclip -selection primary -o`" > $4'
