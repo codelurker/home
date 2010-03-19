@@ -1,7 +1,7 @@
 # example uzbl config.
 # all settings are optional.  you can use uzbl without any config at all (but it won't do much)
 
-set prefix     = /home/mredd/.config
+set prefix     = $HOME/.config
 
 # === Shortcuts / Aliases  ===================================================
 
@@ -185,8 +185,9 @@ set ebind = @mode_bind global,-insert
 # === Mouse bindings =========================================================
 
 # Middle click open in new window
-@bind  <Button2>  = sh 'if [ "\@SELECTED_URI" ]; then uzbl-browser -u "\@SELECTED_URI"; else echo "uri $(xclip -o)" > $4; fi'
-
+#@bind  <Button2>  = sh 'if [ "\@SELECTED_URI" ]; then uzbl-browser -u "\@SELECTED_URI"; else echo "uri $(xclip -o)" > $4; fi'
+#@cbind  gp              = sh 'echo "event NEW_TAB `xclip -selection primary -o`" > $4'
+@bind  <Button2>  = sh 'if [ "\@SELECTED_URI" ]; then echo "event NEW_TAB \@SELECTED_URI" > $4; fi'
 
 # === Keyboard bindings ======================================================
 
@@ -291,7 +292,8 @@ set preset = event PRESET_TABS
 @cbind  gli                 = @preset list
 
 # --- Web searching binds ---
-@cbind  :g<Google:>_         = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
+@cbind  :g<Google:>_ = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
+@cbind  :imdb<IMDb:>_ = uri http://www.imdb.com/find?s=all&q=%s
 @cbind  :awiki<Archwiki:>_  = uri http://wiki.archlinux.org/index.php/Special:Search?search=\@<encodeURIComponent(%r)>\@&go=Go
 @cbind  :wiki<Wikipedia:>_  = uri http://en.wikipedia.org/w/index.php?title=Special:Search&search=\@<encodeURIComponent(%r)>\@&go=Go
 
