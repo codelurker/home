@@ -31,8 +31,10 @@ WMII_FBROWSER="thunderbird3"
 #WMII_WBROWSER="sh ~/scripts/net/strttabbedvimprobable2.sh"
 WMII_WBROWSER="$HOME/.config/uzbl/scripts/uzbl-tabbed"
 WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
-WMII_MUSICPLAYER="urxvt -pixmap "$HOME/images/wallpapers/no_comment_hd_widescreen_wallpaper_880.jpeg" -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
+#WMII_MUSICPLAYER="urxvt -pixmap "$HOME/images/wallpapers/no_comment_hd_widescreen_wallpaper_880.jpeg" -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
+#WMII_MUSICPLAYER="urxvt -pixmap "$HOME/images/wallpapers/DoubleBot.jpg" -title MOC -fn 'xft:Liberation Mono:pixelsize=12:antialias=true:hinting=true' -e mocp"
 #WMII_MUSICPLAYER="urxvt -title 'MOC' -e mocp"
+WMII_MUSICPLAYER="sh $HOME/.wmii-hg/scripts/random-bg-rxvt.sh"
 
 # Menu history
 hist="$(wmiir namespace)/history"
@@ -49,7 +51,7 @@ wmiir write /tagrules <<!
 /VLC|MPlayer/ -> ~
 /KDX.*/ -> ~
 /screen|conkeror|uzbl-*|tabbed|vimprobable2/ -> +haon
-/gedit|leafpad/ -> +edit
+#/gedit|leafpad/ -> +edit
 /ssh|web/ -> +web
 /Gimp/ -> ~+art
 /Boxee|boxee/ -> +Boxee
