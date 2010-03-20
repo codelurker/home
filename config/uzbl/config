@@ -294,6 +294,12 @@ set preset = event PRESET_TABS
 # --- Web searching binds ---
 @cbind  :g<Google:>_ = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
 @cbind  :imdb<IMDb:>_ = uri http://www.imdb.com/find?s=all&q=%s
+@cbind  :newzan<NewzBinAnime:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.11&fpn=p&searchaction=Go&category=11&areadone=c.11
+@cbind  :newzap<NewzBinApp:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.1&fpn=p&searchaction=Go&category=1&areadone=c.1
+@cbind  :newzbk<NewzBinBooks:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.13&fpn=p&searchaction=Go&category=13&areadone=c.13
+@cbind  :newzmo<NewzBinMovies:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.6&fpn=p&searchaction=Go&category=6&areadone=c.6
+@cbind  :newzmu<NewzBinMusic:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.7&fpn=p&searchaction=Go&category=7&areadone=c.7
+@cbind  :newztv<NewzBinTV:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.8&fpn=p&searchaction=Go&category=8&areadone=c.8
 @cbind  :awiki<Archwiki:>_  = uri http://wiki.archlinux.org/index.php/Special:Search?search=\@<encodeURIComponent(%r)>\@&go=Go
 @cbind  :wiki<Wikipedia:>_  = uri http://en.wikipedia.org/w/index.php?title=Special:Search&search=\@<encodeURIComponent(%r)>\@&go=Go
 
