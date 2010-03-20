@@ -60,6 +60,7 @@ set new_window          = sh 'uzbl-browser -u $8'
 # Load commit handlers
 @on_event   LOAD_COMMIT    @set_status <span foreground="green">recv</span>
 @on_event   LOAD_COMMIT    script @scripts_dir/scroll-percentage.js
+@on_event   LOAD_COMMIT    script @scripts_dir/change_style.sh
 # Reset the keycmd on navigation
 @on_event   LOAD_COMMIT    @set_mode
 
@@ -436,4 +437,4 @@ set default_mode = command
 # === Post-load misc commands  ===============================================
 
 # Set the "home" page.
-set uri = uzbl.org/doesitwork/@COMMIT
+set uri = m-redd.com
