@@ -96,9 +96,12 @@ bind '}' history
 screen -t shell 0  
 screen -t irc 1 irssi
 screen -t cim 2 centerim
-screen -t t 3 $HOME/apps/bin/bashtc
-screen -t w 4 sh $HOME/scripts/system/w.sh
+screen -t twit 3 $HOME/apps/bin/bashtc
+screen -t w vim vim
 screen -t tv 5 
+screen -t ftp 7 lftp
+screen -t ssh 8
+
 #
 #
 #
