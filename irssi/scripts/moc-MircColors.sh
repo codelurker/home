@@ -74,40 +74,40 @@ PBARS=$(expr $PERCENT / 10 | cut -c01-01)
 #
 case $PBARS in
         0)
-                PBAR=$(echo -e "${R}[${G}${BK}>${RT}${T}---------${R}]")
+                PBAR=$(echo -e "${R}[${T}-${RT}${PN}>${R}]")
                 ;;        
         1)
-                PBAR=$(echo -e "${R}[${G}${BK}o${RT}${T}---------${R}]")
+                PBAR=$(echo -e "${R}[${T}+${RT}${PN}>${R}]")
                 ;;
         2)
-                PBAR=$(echo -e "${R}[${T}-${G}${BK}o${RT}${T}--------${R}]")
+                PBAR=$(echo -e "${R}[${T}++${RT}${PN}>${R}]")
                 ;;
         3)
-                PBAR=$(echo -e "${R}[${T}--${G}${BK}o${RT}${T}-------${R}]")
+                PBAR=$(echo -e "${R}[${T}+++${RT}${PN}>${R}]")
                 ;;
         4)
-                PBAR=$(echo -e "${R}[${T}---${G}${BK}o${RT}${T}------${R}]")
+                PBAR=$(echo -e "${R}[${T}++++${RT}${PN}>${R}]")
                 ;;
         5)
-                PBAR=$(echo -e "${R}[${T}----${G}${BK}o${RT}${T}-----${R}]")
+                PBAR=$(echo -e "${R}[${T}+++++${RT}${PN}>${R}]")
                 ;;
         6)
-                PBAR=$(echo -e "${R}[${T}-----${G}${BK}o${RT}${T}----${R}]")
+                PBAR=$(echo -e "${R}[${T}++++++${RT}${PN}>${R}]")
                 ;;
         7)
-                PBAR=$(echo -e "${R}[${T}------${G}${BK}o${RT}${T}---${R}]")
+                PBAR=$(echo -e "${R}[${T}+++++++${RT}${PN}>${R}]")
                 ;;
         8)
-                PBAR=$(echo -e "${R}[${T}-------${G}${BK}o${RT}${T}--${R}]")
+                PBAR=$(echo -e "${R}[${T}++++++++${RT}${PN}>${R}]")
                 ;;
         9)
-                PBAR=$(echo -e "${R}[${T}--------${G}${BK}o${RT}${T}-${R}]")
+                PBAR=$(echo -e "${R}[${T}+++++++++${RT}${PN}>${R}]")
                 ;;
         10)
-                PBAR=$(echo -e "${R}[${T}---------${G}${BK}O${RT}${R}]")
+                PBAR=$(echo -e "${R}[${T}++++++++++${RT}${PN}>${R}]")
                 ;;
         *)
-                PBAR=$(echo -e "${R}[${G}${BK}oooooooooo${RT}${R}]")
+                PBAR=$(echo -e "${R}[${PN}<${T}${BK}----------${PN}>${RT}${R}]")
 esac
 ##
 # Vol-Bar
