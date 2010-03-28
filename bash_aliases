@@ -55,12 +55,13 @@ alias devterm="urxvt -name 'dev' &"
 alias trannyterm="transset .90 "
 alias less="$PAGER"
 alias vim2html="~/scripts/office/vim2html.sh "
+alias openpdf="apvlv "
 alias sitedump="~/scripts/net/site-grab.sh "
 #alias teamspeak="wine $HOME/.wine/drive_c/Program\ Files/Teamspeak2_RC2/TeamSpeak.exe"
 alias munrar="$HOME/scripts/archive/unrar.sh"
 alias mountiso="mount -t iso9660 -o loop=/dev/loop0"
 alias tunetv="sh $HOME/scripts/tv/tune-ivtv.sh"
-alias newplaylists="cd /mnt/b/Music/;sh ~/scripts/rip/audio/genm3u_audioplaylist.sh;~/scripts/rip/audio/newplaylist.sh"
+alias newplaylists="cd $HOME/Music/;sh ~/scripts/rip/audio/genm3u_audioplaylist.sh;~/scripts/rip/audio/newplaylist.sh"
 #UZBL
 alias uzblweb="$HOME/.config/uzbl/scripts/uzbl-tabbed & "
 #vimprobable2
@@ -217,13 +218,13 @@ alias scan="scanimage -L"
 
 # DVD Backup - Rip
 #############
-alias dvdbkupinfo="dvdbackup -i -i /dev/sr0 -I"
-alias dvdbkupmain="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -F"
-alias dvdbkupall="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -M"
-alias dvdbkuptitleset="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -T "
-alias dvdbkuptitle="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -t "
-alias dvdbkupchapterfrom="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -S "
-alias dvdbkupchapterto="dvdbackup -i /dev/sr0 -o ~/Video/rip/dvd/ -e "
+alias dvdbkupinfo="dvdbackup -I -i /dev/dvd"
+alias dvdbkupmain="dvdbackup -F -i /dev/dvd -o ~/Video/rip/dvd/"
+alias dvdbkupall="dvdbackup -M -i /dev/dvd -o ~/Video/rip/dvd/"
+alias dvdbkuptitleset="dvdbackup -i /dev/dvd -o ~/Video/rip/dvd/ -T "
+alias dvdbkuptitle="dvdbackup -i /dev/dvd -o ~/Video/rip/dvd/ -t "
+alias dvdbkupchapterfrom="dvdbackup -i /dev/dvd -o ~/Video/rip/dvd/ -S "
+alias dvdbkupchapterto="dvdbackup -i /dev/dvd -o ~/Video/rip/dvd/ -e "
 
 #Create DVD
 #############
