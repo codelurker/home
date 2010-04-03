@@ -10,15 +10,13 @@ CURL="/usr/bin/curl"
 # Cat - Path to Cat
 CAT="/bin/cat"
 # UserID - Add it Here
-USERNAME=""
+USERNAME=`cat $HOME/.nzbmatrixrc | awk '{print $6}'`
 # APIKey - Add it Here
-APIKEY=""
+APIKEY=`cat $HOME/.nzbmatrixrc | awk '{print $9}'`
 # Temp Folder Path
 TMP="$HOME/tmp"
 # Max Results
 MAXRESULTS="3"
-# Category
-CATEGORYID="Everything"
 
 
 # Fetch Info
@@ -42,8 +40,6 @@ sleep 2
     SPLAT=$($CAT $TMP/nzbsearch.txt | tr -d ";")
 if [ "$SPLAT" = "error:nothing_found" ]; then
     echo "No Files Found.."
-elif [ "$SPLAT" = "error:vip_only" ]; then
-    echo "VIP Only: NZBMatrix Offers Search to VIP Members Only" 
 else
     echo "$SPLAT"
 
