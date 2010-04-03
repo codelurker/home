@@ -42,6 +42,8 @@ sleep 2
     SPLAT=$($CAT $TMP/nzbsearch.txt | tr -d ";")
 if [ "$SPLAT" = "error:nothing_found" ]; then
     echo "No Files Found.."
+elif [ "$SPLAT" = "error:vip_only" ]; then
+    echo "VIP Only: NZBMatrix Offers Search to VIP Members Only" 
 else
     echo "$SPLAT"
 
