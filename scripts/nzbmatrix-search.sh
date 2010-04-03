@@ -26,7 +26,7 @@ SEARCH="$@"
 if [ -z "$SEARCH" ]; then
     echo "Search Needs Category and searchterm... "
     echo "Category uses the c as a trigger Example: cMovies The Way the West was Won"
-    echo " Example: cTV True Blood      |  Example: cAnime Akira"
+    echo "Categories Apps - Anime - Games - Movies - Music - TV - Everything"
 else
     unset response
 CATEGORYID=$(echo $1 | sed 's/^c//')
