@@ -2,6 +2,7 @@
 #
 # Fetch Latest Listings from NZBMatrix
 # by: MreDD
+# nzbmatrix-latest.pl
 ##
 # Variables
 # ELinks - Path to ELinks
@@ -23,7 +24,7 @@ if [ -z "$SEARCH" ]; then
 else
     unset response
 # Fetch Latest
-    $ELINKS -dump -dump-width 300 "https://rss.nzbmatrix.com/rss.php?cat=${SEARCH}&userid=${USERID}&apikey=${APIKEY}" > $TMP/nzblatest.txt
+    $ELINKS -dump -dump-width 300 "http://rss.nzbmatrix.com/rss.php?cat=${SEARCH}&userid=${USERID}&apikey=${APIKEY}" > $TMP/nzblatest.txt
     echo -ne "Searching in $SEARCH @ NZBMatrix..."
     echo ""
    $CAT $TMP/nzblatest.txt | grep "Name" | awk '{print $3,$4,$5,$6,$7,$8,$9,$10,$11,"-",$1}'

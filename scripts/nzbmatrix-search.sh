@@ -38,7 +38,7 @@ SEARCH=$(echo "$@" | tr ' ' '+')
     echo ""
 sleep 2
 # Search
-    $CURL "https://nzbmatrix.com/api-nzb-search.php?search=${SEARCH}&catid=${CATEGORYID}&num=${MAXRESULTS}&username={$USERNAME}&apikey=${APIKEY}" > $TMP/nzbsearch.txt
+    $CURL "https://nzbmatrix.com/api-nzb-search.php?search=${SEARCH}&catid=${CATEGORYID}&num=${MAXRESULTS}&username=${USERNAME}&apikey=${APIKEY}" > $TMP/nzbsearch.txt
     SPLAT=$($CAT $TMP/nzbsearch.txt | tr -d ";")
     echo "$SPLAT"
 
