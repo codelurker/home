@@ -26,6 +26,12 @@ else
     $ELINKS -dump -dump-width 600 "http://rss.nzbmatrix.com/rss.php?cat=${SEARCH}&userid=${USERID}&apikey=${APIKEY}" > $TMP/nzblatest.txt
     echo -ne "Searching in $SEARCH @ NZBMatrix..."
     echo ""
-   $CAT $TMP/nzblatest.txt | grep "Name" | awk '{print $3,$4,$5,$6,$7,$8,$9,$10,$11,"-",$1}'
+SPLAT=$($CAT $TMP/nzblatest.txt | grep "Name" | awk '{print $3,$4,$5,$6,$7,$8,$9,$10,$11,"-",$1}')
+if [ "$SPLAT" = "error:nothing_found" ]; then
+    echo "No Files Found.."
+else
+    echo "$SPLAT"
 fi
+fi
+
 exit 0
