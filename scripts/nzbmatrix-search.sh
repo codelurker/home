@@ -40,8 +40,12 @@ sleep 2
 # Search
     $CURL "https://nzbmatrix.com/api-nzb-search.php?search=${SEARCH}&catid=${CATEGORYID}&num=${MAXRESULTS}&username=${USERNAME}&apikey=${APIKEY}" > $TMP/nzbsearch.txt
     SPLAT=$($CAT $TMP/nzbsearch.txt | tr -d ";")
+if [ "$SPLAT" = "error:nothing_found" ]; then
+    echo "No Files Found.."
+else
     echo "$SPLAT"
 
+fi
 fi
 exit 0
 
