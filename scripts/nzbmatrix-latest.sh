@@ -18,7 +18,7 @@ TMP="$HOME/tmp"
 # Fetch Info
 SEARCH="$@"
 if [ -z "$SEARCH" ]; then
-    echo -e "Provide a Search Category, Choices - Apps - Anime - Games - Movies - Music - TV"
+    echo -e "Provide a Search Category | Categories - Apps - Anime - Games - Movies - Music - TV"
     echo ""
 else
     unset response
