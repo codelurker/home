@@ -32,8 +32,8 @@ else
     unset response
 sleep 2
 # Search
-    $CURL "${MATRIX}id=596240&username=${USERNAME}&apikey=${APIKEY}" > $TMP/nzbpostdetail.txt
-#    $ELINKS "${MATRIX}id=596240&username=${USERNAME}&apikey=${APIKEY}" > $TMP/nzbpostdetail.txt
+    $CURL "${MATRIX}id=${NZBID}&username=${USERNAME}&apikey=${APIKEY}" > $TMP/nzbpostdetail.txt
+#    $ELINKS "${MATRIX}id=${NZBID}&username=${USERNAME}&apikey=${APIKEY}" > $TMP/nzbpostdetail.txt
     SPLAT=$($CAT $TMP/nzbpostdetail.txt | tr -d ";")
 if [ "$SPLAT" = "error:nothing_found" ]; then
     echo "NoFiles: No Files Found.."
