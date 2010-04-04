@@ -40,9 +40,39 @@ sleep 2
     SPLAT=$($CAT $TMP/nzbsearch.txt | tr -d ";")
 if [ "$SPLAT" = "error:nothing_found" ]; then
     echo "No Files Found.."
+elif [ "$SPLAT" = "error:vip_only" ]; then
+    echo "VIP Only: NZBMatrix Offers Search to VIP Members Only"
 else
-    echo "$SPLAT"
-
+#    echo "$SPLAT"
+    echo "Max Search Results (${MAXRESULTS}) "
+    echo " "
+    echo "One"
+    $CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print "NZBTitle:",$0}' | head -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "Link:","http://"$0}' | head -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print "Category:",$1,"-",$3}' | head -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print "IndexDate:",$0}' | head -1
+    $CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print "Group:",$0}' | head -1 | tr -d ";"
+    CONVERTONE=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | head -1 | tr -d ";" | cut -f 1 -d ".")
+    echo -ne "FileSize: $(($CONVERTONE >> 20)) Mb"
+    echo " "
+    echo "Two"
+    $CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print "NZBTitle:",$0}' | head -2  | tail -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "Link:","http://"$0}' | head -2  | tail -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print "Category:",$1,"-",$3}' | head -2  | tail -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print "IndexDate:",$0}' | head -2 | tail -1 
+    $CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print "Group:",$0}' | head -2  | tail -1 | tr -d ";"
+    CONVERTTWO=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | head -2  | tail -1 | tr -d ";" | cut -f 1 -d ".")
+    echo -ne "FileSize: $(($CONVERTTWO >> 20)) Mb"
+    echo " "
+    echo "Three"
+    $CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print "NZBTitle:",$0}' | tail -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "Link:","http://"$0}' | tail -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print "Category:",$1,"-",$3}' | tail -1 | tr -d ";"
+    $CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print "IndexDate:",$0}' | tail -1
+    $CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print "Group:",$0}' | tail -1 | tr -d ";"
+    CONVERTTHREE=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | tail -1 | tr -d ";" | cut -f 1 -d ".")
+    echo -ne "FileSize: $(($CONVERTTHREE >> 20)) Mb"
+    echo " "
 fi
 fi
 exit 0
