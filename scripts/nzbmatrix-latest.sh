@@ -4,6 +4,8 @@
 # by: MreDD
 ##
 # Variables
+# NZBMatrix API Link
+MATRIX="https://nzbmatrix.com/api-nzb-search.php?"
 # ELinks - Path to ELinks
 ELINKS="/usr/bin/elinks"
 # Cat - Path to Cat
@@ -23,7 +25,7 @@ if [ -z "$SEARCH" ]; then
 else
     unset response
 # Fetch Latest
-    $ELINKS -dump -dump-width 300 "http://rss.nzbmatrix.com/rss.php?cat=${SEARCH}&userid=${USERID}&apikey=${APIKEY}" > $TMP/nzblatest.txt
+    $ELINKS -dump -dump-width 300 "${LINK}cat=${SEARCH}&userid=${USERID}&apikey=${APIKEY}" > $TMP/nzblatest.txt
     echo -e "Searching in $SEARCH @ NZBMatrix..."
     echo ""
 SPLAT="$($CAT $TMP/nzblatest.txt | grep "Name" | awk '{print $3,$4,$5,$6,$7,$8,$9,$10,$11,"-",$1}')"

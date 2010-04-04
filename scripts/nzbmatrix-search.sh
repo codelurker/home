@@ -5,8 +5,8 @@
 #
 ##
 # Variables
-# NZBMatrix API Download Link - SSL
-LINK="https://nzbmatrix.com/api-nzb-details.php?"
+# NZBMatrix API Link
+MATRIX="https://nzbmatrix.com/api-nzb-search.php?"
 # Curl - Path to Curl
 CURL="/usr/bin/curl"
 # Cat - Path to Cat
@@ -38,7 +38,7 @@ SEARCH=$(echo "$@" | tr ' ' '+')
     echo ""
 sleep 2
 # Search
-    $CURL "${LINK}search=${SEARCH}&catid=${CATEGORYID}&num=${MAXRESULTS}&username={$USERNAME}&apikey=${APIKEY}" > $TMP/nzbsearch.txt
+    $CURL "${MATRIX}search=${SEARCH}&catid=${CATEGORYID}&num=${MAXRESULTS}&username={$USERNAME}&apikey=${APIKEY}" > $TMP/nzbsearch.txt
     SPLAT=$($CAT $TMP/nzbsearch.txt | tr -d ";")
 if [ "$SPLAT" = "error:nothing_found" ]; then
     echo "NoFiles: No Files Found.."
