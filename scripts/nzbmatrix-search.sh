@@ -33,7 +33,6 @@ CATEGORYID=$(echo $1 | sed 's/^c//')
     shift
 SEARCH=$(echo "$@" | tr ' ' '+')
     echo -e "Searching In Category $CATEGORYID"
-    echo ""
     echo -e "Searching for $SEARCH"
     echo ""
 sleep 2
@@ -61,7 +60,6 @@ elif [ "$SPLAT" = "error:no_nzb_found" ]; then
 else
 #    echo "$SPLAT"
     echo -e "[ Max Search Results (${MAXRESULTS}) ]"
-    echo " "
     echo -e "(One)"
     echo -e "NZBTitle: `$CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | sed 's/^NZBNAME://' | head -1 | tr -d ";"`"
     echo -e "NZBID: `$CAT $TMP/nzbsearch.txt | grep "NZBID:" | sed 's/^NZBID://' | head -1 | tr -d ";"`" 
