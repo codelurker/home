@@ -47,30 +47,30 @@ else
     echo "Max Search Results (${MAXRESULTS}) "
     echo " "
     echo "One"
-    $CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print "NZBTitle:",$0}' | head -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "Link:","http://"$0}' | head -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print "Category:",$1,"-",$3}' | head -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print "IndexDate:",$0}' | head -1
-    $CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print "Group:",$0}' | head -1 | tr -d ";"
+    echo -e "NZBTitle: `$CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print $0}' | head -1 | tr -d ";"`"
+    echo -e "Link: `$CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "http://"$0}' | head -1 | tr -d ";"`"
+    echo -e "Category: `$CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print $1,"-",$3}' | head -1 | tr -d ";"`"
+    echo -e "IndexDate: `$CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print $0}' | head -1`"
+    echo -e "Group: `$CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print $0}' | head -1 | tr -d ";"`"
     CONVERTONE=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | head -1 | tr -d ";" | cut -f 1 -d ".")
     echo -ne "FileSize: $(($CONVERTONE >> 20)) Mb"
     echo " "
     echo "Two"
-    $CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print "NZBTitle:",$0}' | head -2  | tail -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "Link:","http://"$0}' | head -2  | tail -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print "Category:",$1,"-",$3}' | head -2  | tail -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print "IndexDate:",$0}' | head -2 | tail -1 
-    $CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print "Group:",$0}' | head -2  | tail -1 | tr -d ";"
-    CONVERTTWO=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | head -2  | tail -1 | tr -d ";" | cut -f 1 -d ".")
+    echo -e "NZBTitle: `$CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print $0}' | head -1 | tail -1 | tr -d ";"`"
+    echo -e "Link: `$CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "http://"$0}' | head -1 | tail -1 | tr -d ";"`"
+    echo -e "Category: `$CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print $1,"-",$3}' | head -1 | tail -1 | tr -d ";"`"
+    echo -e "IndexDate: `$CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print $0}' | head -1 | tail -1`"
+    echo -e "Group: `$CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print $0}' | head -1 | tail -1 | tr -d ";"`"
+    CONVERTTWO=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | head -1 | tail -1 |  tr -d ";" | cut -f 1 -d ".")
     echo -ne "FileSize: $(($CONVERTTWO >> 20)) Mb"
     echo " "
     echo "Three"
-    $CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print "NZBTitle:",$0}' | tail -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "Link:","http://"$0}' | tail -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print "Category:",$1,"-",$3}' | tail -1 | tr -d ";"
-    $CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print "IndexDate:",$0}' | tail -1
-    $CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print "Group:",$0}' | tail -1 | tr -d ";"
-    CONVERTTHREE=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | tail -1 | tr -d ";" | cut -f 1 -d ".")
+    echo -e "NZBTitle: `$CAT $TMP/nzbsearch.txt | grep "NZBNAME:" | cut -f 2 -d ":" | awk -F\| '{print $0}' | tail -1 | tr -d ";"`"
+    echo -e "Link: `$CAT $TMP/nzbsearch.txt | grep "LINK:" | cut -f 2 -d ":" | awk '{print "http://"$0}' | tail -1 | tr -d ";"`"
+    echo -e "Category: `$CAT $TMP/nzbsearch.txt | grep "CATEGORY:" | cut -f 2 -d ":" | awk '{print $1,"-",$3}' | tail -1 | tr -d ";"`"
+    echo -e "IndexDate: `$CAT $TMP/nzbsearch.txt | grep "INDEX_DATE:" | cut -f 2 -d ":" | awk '{print $0}' | tail -1`"
+    echo -e "Group: `$CAT $TMP/nzbsearch.txt | grep "GROUP:" | cut -f 2 -d ":" | awk '{print $0}' | tail -1 | tr -d ";"`"
+    CONVERTTHREE=$($CAT $TMP/nzbsearch.txt | grep "SIZE:" | cut -f 2 -d ":" | tail -1 |  tr -d ";" | cut -f 1 -d ".")
     echo -ne "FileSize: $(($CONVERTTHREE >> 20)) Mb"
     echo " "
 fi
