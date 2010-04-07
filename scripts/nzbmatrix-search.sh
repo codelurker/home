@@ -37,7 +37,7 @@ SEARCH=$(echo "$@" | tr ' ' '+')
     echo ""
 sleep 2
 # Search
-    $CURL "${MATRIX}search=${SEARCH}&catid=${CATEGORYID}&num=${MAXRESULTS}&username={$USERNAME}&apikey=${APIKEY}" > $TMP/nzbsearch.txt
+    $CURL "https://nzbmatrix.com/api-nzb-search.php?search=${SEARCH}&catid=${CATEGORYID}&num=${MAXRESULTS}&username={$USERNAME}&apikey=${APIKEY}" > $TMP/nzbsearch.txt
     SPLAT=$($CAT $TMP/nzbsearch.txt | tr -d ";")
 if [ "$SPLAT" = "error:nothing_found" ]; then
     echo "NoFiles: No Files Found.."
@@ -47,8 +47,8 @@ elif [ "$SPLAT" = "error:invalid_api" ]; then
     echo "APIKey: There is a problem with the API Key you have provided."
 elif [ "$SPLAT" = "error:invalid_nzbid" ]; then
     echo "NZBid: There is a problem with the NZBid supplied."
-elif [ "$SPLAT" = "error:please_wait_x" ]; then
-    echo "Wait: Please wait x seconds before retry."
+elif [ "$SPLAT" = "error:please_wait_60" ]; then
+    echo "Wait: Please wait 60 seconds before retry."
 elif [ "$SPLAT" = "error:vip_only" ]; then
     echo "VIP Only: NZBMatrix Offers Search to VIP Members Only."
 elif [ "$SPLAT" = "error:disabled_account" ]; then
