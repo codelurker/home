@@ -301,6 +301,14 @@ set preset = event PRESET_TABS
 @cbind  :newzmo<NewzBinMovies:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.6&fpn=p&searchaction=Go&category=6&areadone=c.6
 @cbind  :newzmu<NewzBinMusic:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.7&fpn=p&searchaction=Go&category=7&areadone=c.7
 @cbind  :newztv<NewzBinTV:>_ = uri https://v3.newzbin.com/search/query/?q=%s&area=c.8&fpn=p&searchaction=Go&category=8&areadone=c.8
+@cbind  :nzbman<NZBMatrixAnime:>_ = http://nzbmatrix.com/nzb.php?category=Anime
+@cbind  :nzbmap<NZBMatrixApps:>_ = uri http://nzbmatrix.com/nzb.php?cat=18
+@cbind  :nzbmabk<NZBMatrixABooks:>_ = uri http://nzbmatrix.com/nzb.php?cat=49
+@cbind  :nzbmebk<NZBMatrixEBooks:>_ = uri http://nzbmatrix.com/nzb.php?cat=36
+@cbind  :nzbmga<NZBMatrixGames:>_ = uri http://nzbmatrix.com/nzb.php?cat=10
+@cbind  :nzbmmo<NZBMatrixMovie:>_ = uri http://nzbmatrix.com/nzb.php?cat=2
+@cbind  :nzbmmu<NZBMatrixMusic:>_ = uri http://nzbmatrix.com/nzb.php?category=Music
+@cbind  :nzbmtv<NZBMatrixTV:>_ = uri http://nzbmatrix.com/nzb.php?cat=6
 @cbind  :awiki<Archwiki:>_  = uri http://wiki.archlinux.org/index.php/Special:Search?search=\@<encodeURIComponent(%r)>\@&go=Go
 @cbind  :wiki<Wikipedia:>_  = uri http://en.wikipedia.org/w/index.php?title=Special:Search&search=\@<encodeURIComponent(%r)>\@&go=Go
 
