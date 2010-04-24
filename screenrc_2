@@ -19,7 +19,7 @@
 term screen-256color
 #terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 #name the session
-sessionname two
+sessionname web-edit 
 
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
@@ -96,14 +96,12 @@ bind '}' history
 # shelltitle '$ | '
 screen -t shell 0 
 screen -t fm 1 vifm $HOME /mnt
-#screen -t www 2 elinks https://ssl.scroogle.org
-screen -t vim 2 vim 
-#screen -t tnet 4
-#screen -t ftp 5
-#screen -t ssh 6
-screen -t web 3 lftp
-screen -t ssh 4 
-screen -t git 5
+screen -t www 2 elinks https://ssl.scroogle.org
+screen -t vim 3 vim 
+#screen -t tel 4
+screen -t ftp 4 lftp
+screen -t ssh 5 
+screen -t git 6
 #
 #
 #

@@ -19,15 +19,14 @@ WMII_NORMCOLORS='#d7d1d1 #454a57 #909090'
 WMII_FOCUSCOLORS='#000000 #d7d1d1 #0a0a0a'
 
 WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/3120x1050-maggotworms-arch.png'
+#WMII_BACKGROUND='feh --bg-center /home/mredd/images/wallpapers/Shapes.png'
 WMII_FONT='-*-clean-*-*-*-*-12-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_TERM="urxvt -title 'shell'"
-#WMII_UCOM="urxvt -title screen -bg '#485349' -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true'"
-WMII_UCOM="urxvt -title screen -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true'"
-#WMII_UEDIT="urxvt -title edit -bg '#485349' -fn 'xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true'"
-WMII_UEDIT="urxvt -title edit -fn 'xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true'"
-WMII_FBROWSER="thunderbird3"
+WMII_SOCIAL="urxvt -title Social -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true'"
+WMII_WEBEDIT="urxvt -title WebEdit -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true'"
+WMII_FBROWSER="thunderbird"
 #WMII_WBROWSER="sh ~/scripts/net/strttabbedvimprobable2.sh"
 WMII_WBROWSER="$HOME/.config/uzbl/scripts/uzbl-tabbed"
 WMII_MPLAYER="mplayer -ao alsa -vf pp=lb /dev/video0"
@@ -52,9 +51,9 @@ wmiir write /tagrules <<!
 /KDX.*/ -> ~
 /screen|conkeror|uzbl-*|tabbed|vimprobable2/ -> +haon
 #/gedit|leafpad/ -> +edit
-/ssh|web/ -> +web
+#/ssh|web/ -> +web
 /Gimp/ -> ~+art
-/Boxee|boxee/ -> +Boxee
+/Boxee|boxee/ -> ~
 !
 
 # Status Bar Info
@@ -293,9 +292,9 @@ events() {
         Key $MODKEY-Shift-n
 		eval wmiir setsid $WMII_FBROWSER &
         Key $MODKEY-b
-		eval wmiir setsid $WMII_UCOM &
+		eval wmiir setsid $WMII_SOCIAL &
         Key $MODKEY-Shift-b
-		eval wmiir setsid $WMII_UEDIT &
+		eval wmiir setsid $WMII_WEBEDIT &
 	Key $MODKEY-Shift-space
 		wmiir xwrite /tag/sel/ctl send sel toggle
 	Key $MODKEY-f
@@ -305,7 +304,7 @@ events() {
 	Key $MODKEY-Shift-t
 		wmiir xwrite "/client/$(wmiir read /client/sel/ctl)/tags" $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
 	Key $MODKEY-$LEFT
-		wmiir xwrite /tag/sel/ctl senlect left
+		wmiir xwrite /tag/sel/ctl select left
 	Key $MODKEY-$RIGHT
 		wmiir xwrite /tag/sel/ctl select right
 	Key $MODKEY-$DOWN

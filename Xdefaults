@@ -81,17 +81,18 @@ URxvt.keysym.C-minus:          command:\033]710;xft:Pragmata:pixelsize=12:antial
 URxvt.keysym.C-underscore:     command:\033]710;xft:Pragmata:pixelsize=14:antialias=true:hinting=true\007
 URxvt.keysym.C-equal:          command:\033]710;xft:Bitstream Vera Sans Mono:autohint=true\007
 URxvt.keysym.C-plus:           command:\033]710;xft:Pragmata:pixelsize=15:antialias=true:hinting=true\007
+
 !initial size
 URxvt*geometry:                   126x30
 !internal whitespace
 URxvt*borderless:                 true
 URxvt*internalBorder:     0
 !fade text n% upon unfocus
-!URxvt*fading:             20
+URxvt*fading:             5
 !darken=(0 to 100) lighten=(-1 to -100)
-URxvt*shading:            -5
+URxvt*shading:            50
 !tint background with this color
-!URxvt*tintColor:          #191717
+URxvt*tintColor:          #191717
 !set to 32-bit for real transparency (compositing required)
 URxvt*depth:             32
 !save n lines of scrollback buffer
@@ -112,7 +113,7 @@ URxvt*scrollstyle:        plain
 URxvt*scrollBar_right:    true
 URxvt*scrollColor:        #777777
 !transparency
-URxvt*transparent:        true
+URxvt*transparent:        false
 !is this a login shell?
 URxvt*loginShell:         true
 !set the TERM environment variable
@@ -130,10 +131,11 @@ URxvt*mapAlert:           true
 URxvt*utmpInhibit:        true
 !! BEGIN urlLauncher settings !!
 URxvt*perl-lib:           /usr/lib/urxvt/perl/
+!URxvt*perl-ext-common: default,matcher,clipboard
 URxvt*perl-ext-common: default,matcher
-!URxvt*urlLauncher:        urxvt-to-uzbl.sh
+URxvt*urlLauncher:        /home/mredd/scripts/net/urxvt-to-uzbl.sh
 !URxvt*urlLauncher:        conkeror
-URxvt*urlLauncher:        vimprobable2
+!URxvt*urlLauncher:        vimprobable2
 !! END urlLauncher settings !!
 !tabs
 !URxvt*tabbed.hide              true
@@ -143,9 +145,10 @@ URxvt*tabbar-bg:               234
 URxvt*tab-fg:                  95
 URxvt*tab-bg:                  233
 URxvt*tabbed.secondaryScroll:  true
-!URxvt.tabbed.urlLauncher:      urxvt-to-uzbl.sh
+!URxvt.tabbed.urlLauncher:      /home/mredd/scripts/net/urxvt-to-uzbl.sh
 URxvt.tabbed.urlLauncher:        vimprobable2
 URxvt*tabbed.matcher.button:   2
+!URxvt*tabbed.perl-ext-common: default,matcher,clipboard
 URxvt*tabbed.perl-ext-common: default,matcher
 URxvt*keysym.C-Delete:    perl:matcher
 URxvt*matcher.button:     1

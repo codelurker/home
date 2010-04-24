@@ -18,7 +18,7 @@
 term screen-256color
 #terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 #name the session
-sessionname web
+sessionname social
 
 # This is how one can set a reattach password:
 #password     # "1234"
@@ -93,15 +93,12 @@ bind '}' history
 #
 
 # shelltitle '$ | '
-screen -t shell 0  
+screen -t shell 0 
 screen -t irc 1 irssi
 screen -t cim 2 centerim
 screen -t twit 3 $HOME/apps/bin/bashtc
-screen -t fbcmd 4 fbcmd update 
-screen -t vim 5 vim
-screen -t tv 6 
-screen -t ftp 6 lftp
-screen -t ssh 7 
+screen -t fbcmd 4
+screen -t video 7  
 
 #
 #
