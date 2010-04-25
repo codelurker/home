@@ -69,7 +69,7 @@ add("http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml")
 #add("http://quick2")
 
 # Colors
-colors[0] = (145, 234)
+colors[0] = (208, 234)
 colors[1] = (181, 234)
 colors[2] = (237, 234)
 
