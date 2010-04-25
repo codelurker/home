@@ -26,6 +26,7 @@ set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_TERM="urxvt -title 'shell'"
 WMII_SOCIAL="urxvt -title Social -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true'"
 WMII_WEBEDIT="urxvt -title WebEdit -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true'"
+WMII_RSS="urxvt -title RSSFeeds -fn 'xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true' -e canto"
 WMII_FBROWSER="thunderbird"
 #WMII_WBROWSER="sh ~/scripts/net/strttabbedvimprobable2.sh"
 WMII_WBROWSER="$HOME/.config/uzbl/scripts/uzbl-tabbed"
@@ -285,8 +286,6 @@ events() {
 		eval wmiir setsid $WMII_TERM &
         Key $MODKEY-Mod1-m
                 eval wmiir setsid $WMII_MUSICPLAYER & 
-        Key $MODKEY-Mod1-n
-               eval wmiir setsid $WMII_MPLAYER &
         Key $MODKEY-n
 		eval wmiir setsid $WMII_WBROWSER &
         Key $MODKEY-Shift-n
@@ -295,6 +294,8 @@ events() {
 		eval wmiir setsid $WMII_SOCIAL &
         Key $MODKEY-Shift-b
 		eval wmiir setsid $WMII_WEBEDIT &
+        Key $MODKEY-Mod1-n
+               eval wmiir setsid $WMII_RSS &
 	Key $MODKEY-Shift-space
 		wmiir xwrite /tag/sel/ctl send sel toggle
 	Key $MODKEY-f
