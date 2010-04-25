@@ -6,7 +6,7 @@ if os.getenv("TERM") == "linux":
     link_handler("elinks \"%u\"", text=True)
     image_handler("fbi \"%u\"", text=True, fetch=True)
 else:
-    link_handler("firefox \"%u\"")
+    link_handler("uzbl-browser \"%u\"")
     image_handler("feh \"%u\"", fetch=True)
 
 # Non-HTML Content
@@ -16,7 +16,7 @@ link_handler("mplayer -someoptions \"%u\"", ext="mp3")
 link_handler("apvlv \"%u\"", ext="pdf", fetch=True)
 
 # Image Handling
-image_handler("fbv \"%u\"", text=True, fetch=True)
+image_handler("feh \"%u\"", text=True, fetch=True)
 
 # Max column width of 65 characters
 def resize_hook (cfg):
