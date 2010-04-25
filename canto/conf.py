@@ -6,8 +6,17 @@ if os.getenv("TERM") == "linux":
     link_handler("elinks \"%u\"", text=True)
     image_handler("fbi \"%u\"", text=True, fetch=True)
 else:
-    link_handler("uzbl-browser \"%u\"")
+    link_handler("firefox \"%u\"")
     image_handler("feh \"%u\"", fetch=True)
+
+# Non-HTML Content
+link_handler("mplayer -someoptions \"%u\"", ext="mp3")
+
+# PDF Handling
+link_handler("apvlv \"%u\"", ext="pdf", fetch=True)
+
+# Image Handling
+image_handler("fbv \"%u\"", text=True, fetch=True)
 
 # Max column width of 65 characters
 def resize_hook (cfg):
@@ -63,41 +72,4 @@ add("http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml")
 colors[0] = (145, 234)
 colors[1] = (181, 234)
 colors[2] = (237, 234)
-
-# Non-HTML Content
-link_handler("mplayer -someoptions \"%u\"", ext="mp3")
-
-# PDF Handling
-link_handler("apvlv \"%u\"", ext="pdf", fetch=True)
-
-# Image Handling
-image_handler("fbv \"%u\"", text=True, fetch=True)
-
-# Download Handling
-#reader_keys['w'] = wget_link("/home/mredd/.canto/downloads")
-
-# Reader Layout
-reader_orientation = None       # Default floating
-reader_orientation = "left"     # Dedicated left of the item list
-reader_orientation = "right"    # Dedicated right of the item list
-reader_orientation = "top"      # Dedicated on top of the item list
-reader_orientation = "bottom"   # Dedicated under the item list
-reader_lines = 10               # Dedicated size of layout
-
-# Layout Hook
-def resize_hook (cfg):
-    cfg.reader_orientation = "center"
-    cfg.reader_lines = cfg.width / 2
-    cfg.columns = (cfg.width / 2) / 65
-
-# Download Handling
-#reader_keys['w'] = wget_link("/home/mredd/.canto/downloads")
-
-# Some examples
-# Uncomment if you've downloaded the script
-# add("script:slashdotpolls -external")
-#
-# Simple password example
-# add("http://feedparser.org/docs/examples/digest_auth.xml", username="test",
-#        password="digest")
 
