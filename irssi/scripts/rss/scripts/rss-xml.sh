@@ -63,9 +63,14 @@ TITLE=$(sh $RANDOMRSS -1 | grep "title" | cut -f 2 -d ">" | cut -f 1 -d "<")
 DESCRIPTION=$(sh $RANDOMRSS -1 | grep "description" | cut -f 2 -d ">" | cut -f 1 -d "<" | head -1)
 LINK=$(sh $RANDOMRSS -1 | grep "guid" | cut -f 2 -d "<" | cut -f 2 -d ">")
 #
-echo "Random RSS Feed..."
-echo ""
-echo -e "${T}$TITLE"
-echo -e "${LGY}$DESCRIPTION"
-echo -e "${LG}$LINK"
+
+if [ "$TITLE" = "" ];then
+    echo -e "${R}No RSS Feed Found${W}... ${T}:("
+else
+    echo "Random RSS Feed..."
+    echo ""
+    echo -e "${T}$TITLE"
+    echo -e "${LGY}$DESCRIPTION"
+    echo -e "${LG}$LINK"
+fi
 exit 0

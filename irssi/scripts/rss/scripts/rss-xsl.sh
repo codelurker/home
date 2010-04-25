@@ -59,13 +59,18 @@ sh $RANDOMRSS > $TMP/null
 #
 # Variables
 TITLE=$(sh $RANDOMRSS -1 | grep "TITLE" | sed 's/TITLE://g')
-DESCRIPTION=$(sh $RANDOMRSS -1 | grep "DESCRIPTION" | sed 's/DESCRIPTION://g')
+DESCRIPTION=$(sh $RANDOMRSS -1 | grep "DESCRIPTION" | sed 's/DESCRIPTION://g' | head -1)
 LINK=$(sh $RANDOMRSS -2 | grep "LINK" | sed 's/LINK://g')
 #
-echo "Random RSS Feed..."
-echo ""
-echo -e "${T}$TITLE"
-echo -e "${LGY}$DESCRIPTION"
-echo -e "${LG}$LINK"
+
+if [ "$TITLE" = "" ];then
+    echo -e "${R}No RSS Feed Found${W}... ${T}:("
+else
+    echo "Random RSS Feed..."
+    echo ""
+    echo -e "${T}$TITLE"
+    echo -e "${LGY}$DESCRIPTION"
+    echo -e "${LG}$LINK"
+fi
 exit 0
 
